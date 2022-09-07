@@ -42,7 +42,7 @@ import java.util.Scanner;
  * ans = 11
  * 
  * @author boaz.benmoshe
- *
+ * 
  */
 public class Ex1 {
 	
@@ -72,7 +72,7 @@ public class Ex1 {
 			 if(x<y) {long t=x; x=y; y=t;}
 		 }
 		 return y;
-	}
+	}   
 	/**
 	 * This function computes the greater prime divider of a natural number g.
 	 * Any natural number g can be presented as p1*p2*...pk (p1<=p2<=...pk are prime numbers).

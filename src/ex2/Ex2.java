@@ -1,7 +1,8 @@
 package ex2;
 /** 
+ * 
  * This class represents a simple use of arrays for Polynoms.
- * The code is given as a class-solution for Ex2 (Intro to CS, Ariel University)
+ * The code is given as a class-solution for Ex2 (Intro to CS, Ariel University 2021 version)
  * 
  * @author boaz.benmoshe
  *

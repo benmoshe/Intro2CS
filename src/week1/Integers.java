@@ -1,6 +1,8 @@
 package week1;
 /**
  * This is a simple documentation between programmers
+ * This example demonstrates a simple integer (int) initialization, and basic mathematical 
+ * operation over integers.
  * @author boaz.benmoshe
  *
  */

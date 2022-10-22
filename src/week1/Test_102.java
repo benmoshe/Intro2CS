@@ -12,11 +12,11 @@ y/x = 1.0
 u = 18.0, v = 5.0, u/v = 3.6
 y = 11, x = 8, y%x = 3
 x = 8, y = 11, x%y = 8
+
  * @author boaz.benmoshe
  *
  */
 public class Test_102 {
-
 	public static void main(String[] args) {
 		int x = 8, y;
 		y=11;
@@ -40,5 +40,4 @@ public class Test_102 {
 		z = x%y;
 		System.out.println("x = "+x+", y = "+y + ", x%y = "+z);
 	}
-
 }

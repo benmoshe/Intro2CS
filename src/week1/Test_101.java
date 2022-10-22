@@ -1,7 +1,6 @@
 package week1;
 
 public class Test_101 {
-
 	public static void main(String[] args) {
 		double i = 3;
 		i = i *5.3;

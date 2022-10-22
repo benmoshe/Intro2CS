@@ -83,7 +83,7 @@ public class Ex2 {
 	/**
 	 * Given a polynom (p), a range [x1,x2] and an epsilon eps. 
 	 * This function computes an x value (x1<=x<=x2) for which |p(x)| < eps, 
-	 * assuming p(x1)*p(x1) <= 0. 
+	 * assuming p(x1)*p(x2) <= 0. 
 	 * This function should be implemented iteratively (none recursive).
 	 * @param p - the polynom
 	 * @param x1 - minimal value of the range

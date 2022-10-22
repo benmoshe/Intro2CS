@@ -33,9 +33,9 @@ public class Input {
 			    System.out.println(String.format("%s, your age is %d", username, age));
 			    System.out.print("Enter double: ");
 
-			    // get the age as an int
+			    // get a real number as a double
 			   double d = sc.nextDouble();
-			   
+			   System.out.print("The double you have entered is: "+d);
 			  }
 	}
 

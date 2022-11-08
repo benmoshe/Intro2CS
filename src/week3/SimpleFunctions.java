@@ -12,5 +12,11 @@ public class SimpleFunctions {
 		}
 		return ans;
 	}
-
+	public static double random(double min, double max) {
+		double r = Math.random(); // [0,1)
+		double dx = max-min;
+		r = r *dx; // [0,dx) = [0,max-min)
+		r = r + min; //[min,max)
+		return r;
+	}
 }

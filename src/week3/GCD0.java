@@ -2,7 +2,7 @@ package week3;
 /**
  * This code example demonstrates a simple GCD (Greater Common Divider) algorithm
  * @author boaz.benmoshe
- *
+ * output: GCD(12,20) = 4
  */
 public class GCD0 {
 	public static void main(String[] args) {

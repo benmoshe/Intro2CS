@@ -34,5 +34,21 @@ class SimpleFunctionsTest {
 			}
 		}
 	}
-
+	@Test
+	void testRandom() {
+		int num = 100000;
+		double min = 10;
+		double max = 20;
+		double sum = 0;
+		for(int i=0;i<num;i=i+1) {
+			double r = SimpleFunctions.random(min, max);
+			if(r<min || r>= max) {fail();}
+			sum = sum + r;
+		}
+		double ave = sum / num;
+		double mid = (max+min)/2.0;
+		double dist = Math.abs(ave-mid);
+		System.out.println("ave "+ave);
+		if(dist>0.1) {fail();}
+	}
 }

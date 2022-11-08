@@ -8,13 +8,19 @@ import java.util.Scanner;
  */
 public class QuadraticEquation {
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("x^2 + bx + c = 0");
-		System.out.print("Please insert b: ");
-		double b = scanner.nextDouble();
-		System.out.print("Please insert c: ");
-		double c = scanner.nextDouble();
-
+		double b=0,c=0;
+		if(args.length<2 ) {
+			Scanner scanner = new Scanner(System.in);
+			System.out.println("x^2 + bx + c = 0");
+			System.out.print("Please insert b: ");		
+			b = scanner.nextDouble();
+			System.out.print("Please insert c: ");
+			c = scanner.nextDouble();
+		}
+		else {
+			b = Double.parseDouble(args[0]);
+			c = Double.parseDouble(args[1]);
+		}
 		double disciminant = b*b - 4.0*c;
 		System.out.println("x^2 +"+b+"x+"+c+" = 0");
 		if(disciminant>=0) {

@@ -76,7 +76,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 /**
- * Ex4: you can update this class!
+ * Ex2: Please do NOT need to change this class!
  */
 /**
  *  The {@code StdDraw} class provides a basic capability for

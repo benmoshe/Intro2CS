@@ -160,7 +160,7 @@ public class Ex2 {
 		// **************************
 	}
 	/**
-	 * This function computes the derivative polynom.
+	 * This function computes the derivative polynom of po.
 	 * @param po
 	 * @return
 	 */
@@ -187,4 +187,5 @@ public class Ex2 {
 		return ans;
 	}
 	///////////////////// Private /////////////////////
+	// you can add any additional functions (private) below
 }

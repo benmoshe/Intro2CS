@@ -2,8 +2,8 @@ package Exe.Ex2;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 /**
- * This JUnit class represents a very simpel (and partual) unit testing for Ex2 - It should be improved and generalized significantly!
- * @author boazben-moshe
+ * This JUnit class represents a very simple unit testing for Ex2 - It should be improved and generalized significantly!
+ * @author boaz.ben-moshe
  *
  */
 
@@ -49,5 +49,14 @@ class Ex2Test {
 		assertEquals(dp1[0], dp2[0],Ex2.EPS);
 		assertEquals(dp1[1], dp2[1],Ex2.EPS);
 		assertEquals(dp1.length, dp2.length);
+	}
+	@Test
+	public void testFromString() {
+		double[] p = {-1.1,2.3,3.1}; // 3.1X^2.3x-1.1
+		String sp = Ex2.poly(p);
+		double[] p1 = Ex2.getPolynomFromString(sp);
+		boolean isSame = Ex2.equals(p1, p);
+		if(!isSame) {fail();}
+		assertEquals(sp, Ex2.poly(p1));
 	}
 }

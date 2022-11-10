@@ -1,30 +1,20 @@
 package Exe.Ex2;
 /** 
  * This class represents a set of functions on a polynom - represented as array of doubles.
+ * In general, an array {-1,2,3.1} represents the polynom 3.1x^2+2x-1=0,
+ * The index of the entry represents the power of x.
+ * 
+ * Your goal is to complete the functions below, see the marking: // *** add your code here ***
+ *
  * @author boaz.benmoshe
  *
  */
 public class Ex2 {
-	/** Epsilon value for numerical computation, it servs as a "close enough" threshold. */
+	/** Epsilon value for numerical computation, it serves as a "close enough" threshold. */
 	public static final double EPS = 0.001; // the epsilon to be used for the root approximation.
 	/** The zero polynom is represented as an array with a single (0) entry. */
 	public static final double[] ZERO = {0};
-	/**
-	 * This function computes a polynomial representation from a set of 2D points on the polynom.
-	 * Note: this fuction only works for a set of points containing three points, else returns null.
-	 * @param xx
-	 * @param yy
-	 * @return an array of doubles representing the coefficients of the polynom.
-	 */
-	public static double[] PolynomFromPoints(double[] xx, double[] yy) {
-		double [] ans = null;
-		if(xx!=null && yy!=null && xx.length==3 && yy.length==3) {
-			// *** add your code here ***
-			
-			// **************************
-		}
-		return ans;
-	}
+	
 	/** Two polynoms are equal if and only if the have the same coefficients - up to an epsilon (aka EPS) value.
 	 * @param p1 first polynom
 	 * @param p2 second polynom
@@ -63,23 +53,7 @@ public class Ex2 {
 		// **************************
 		return ans;
 	}
-	/**
-	 * Given two polynoms (p1,p2), a range [x1,x2] and an epsilon eps. This function computes an x value (x1<=x<=x2)
-	 * for which |p1(x) -p2(x)| < eps, assuming (p1(x1)-p2(x1)) * (p1(x2)-p2(x2)) <= 0.
-	 * @param p1 - first polynom
-	 * @param p2 - second polynom
-	 * @param x1 - minimal value of the range
-	 * @param x2 - maximal value of the range
-	 * @param eps - epsilon (positive small value (often 10^-3, or 10^-6).
-	 * @return an x value (x1<=x<=x2) for which |p1(x) -p2(x)| < eps.
-	 */
-	public static double sameValue(double[] p1, double[] p2, double x1, double x2, double eps) {
-		double x12 = (x1+x2)/2;
-		// *** add your code here ***
-		
-		// **************************
-		return x12;
-	}
+
 	/**
 	 * Given a polynom (p), a range [x1,x2] and an epsilon eps. 
 	 * This function computes an x value (x1<=x<=x2) for which |p(x)| < eps, 
@@ -114,6 +88,23 @@ public class Ex2 {
 		
 		return x12;
 		// **************************
+	}
+	/**
+	 * Given two polynoms (p1,p2), a range [x1,x2] and an epsilon eps. This function computes an x value (x1<=x<=x2)
+	 * for which |p1(x) -p2(x)| < eps, assuming (p1(x1)-p2(x1)) * (p1(x2)-p2(x2)) <= 0.
+	 * @param p1 - first polynom
+	 * @param p2 - second polynom
+	 * @param x1 - minimal value of the range
+	 * @param x2 - maximal value of the range
+	 * @param eps - epsilon (positive small value (often 10^-3, or 10^-6).
+	 * @return an x value (x1<=x<=x2) for which |p1(x) -p2(x)| < eps.
+	 */
+	public static double sameValue(double[] p1, double[] p2, double x1, double x2, double eps) {
+		double x12 = (x1+x2)/2;
+		// *** add your code here ***
+		
+		// **************************
+		return x12;
 	}
 	/**
 	 * Given two polynoms (p1,p2), a range [x1,x2] and an integer representing the number of "boxes". 
@@ -177,6 +168,23 @@ public class Ex2 {
 		// *** add your code here ***
 		return po;
 		// **************************
+	}
+	/**
+	 * This function computes a polynomial representation from a set of 2D points on the polynom.
+	 * Note: this function only works for a set of points containing three points, else returns null.
+	 * @param xx
+	 * @param yy
+	 * @return an array of doubles representing the coefficients of the polynom.
+	 * Note: you can assume xx[0]!=xx[1]!=xx[2]
+	 */
+	public static double[] PolynomFromPoints(double[] xx, double[] yy) {
+		double [] ans = null;
+		if(xx!=null && yy!=null && xx.length==3 && yy.length==3) {
+			// *** add your code here ***
+			
+			// **************************
+		}
+		return ans;
 	}
 	///////////////////// Private /////////////////////
 }

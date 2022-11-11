@@ -3,7 +3,7 @@ package Exe.Ex2;
  * This class is a very simple GUI (Graphic User Interface) main class for Ex2 (Intro2CS, Ariel Uni'). 
  * This class uses the StdDraw (see: https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html) 
  * in order to draw two polynoms in a defined range.
- * Note: Do not change this class as it should run your Ex2.java solution and present 
+ * Note: Do NOT change this class as it should run your Ex2.java solution and present 
  * a GUI as shown in the definition of Ex2.
  * 
  * @author boaz.benmoshe

@@ -2,7 +2,9 @@ package Exe.Ex2;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 /**
- * This JUnit class represents a very simple unit testing for Ex2 - It should be improved and generalized significantly!
+ * This JUnit class represents a very simple unit testing for Ex2.
+ * This class should be improved and generalized significantly.
+ * Make sure you add documentations to this Tesing class.
  * @author boaz.ben-moshe
  *
  */

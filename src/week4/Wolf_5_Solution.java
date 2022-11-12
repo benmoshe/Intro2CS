@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * 4.3.1.1 if so: found=true; return po (as a solution)
  * 4.4 i++
  * 
- * Do Not publish the following Human solution to the students (2,3,4,4,3,2): 
+ * Optimal (minimal) solution: {2,3,4,4,3,2}, 
  * Note: as of symmetry there are 3 other such solution
  * 	
 round	1	2	3	4	5	pos		possible	impossible
@@ -36,42 +36,36 @@ round	1	2	3	4	5	pos		possible	impossible
  */
 public class Wolf_5_Solution{
 	public static void main(String[] a) {
-		int gen = 7;
 		ArrayList<int[]> opt = new ArrayList<int[]>();
 		int[][] all = {{1},{2},{3},{4},{5}};
-	//	for(int i=0;i<all.length;i++) {;}
-		boolean foundSolution = false;
-		int len=1;
-		opt.add(all[0]);
-		while (!foundSolution) {
-			
+		for(int i=0;i<all.length;i++) {opt.add(all[i]);}
+		boolean found = false;
+		int i=2;
+		while(!found) {
 			opt = nextGen(opt);
 			System.out.println();
-			System.out.println("*** number of optins: "+opt.size()+"  for length "+(len+1)+" option");
-			ArrayList<int[]> allPlays = new ArrayList<int[]>();
+			System.out.println("Number of optins (for the wolf): "+opt.size());
 			for(int t=0;t<opt.size();t++) {
+				
 				int[] aa = opt.get(t);
-				//for(int tt=0;tt<aa.length;tt++) {
-				//	System.out.print(aa[tt]+",");
-				//}
-			//	allPlays.add(all[len]);
-			//	System.out.println();
+				for(int tt=0;tt<aa.length;tt++) {
+					System.out.print(aa[tt]+",");
+				}
+				System.out.println();
 			}
-			foundSolution = testSolution(allPlays, opt);
-			System.out.println(foundSolution);
-
-			//	System.out.println(allPlays.size());
-			System.out.println();
-			len=len+1;
+			ArrayList<int[]> allPlays = allOption(i);
+			System.out.println("All plays: (5^"+i+") = "+allPlays.size());
+			found = testSolution(allPlays, opt);
+			System.out.println("Solution found for ("+i+") steps --> "+found);
+			if(!found) {i=i+1;}
 		}
-		// opt now has all the possible movement of the wolf.
-		// testin all options:
-//		int[] sol1 = {2,3,4,4,3,2};
-//		int[] sol2 = {2,3,4,2,3,4};
-
-	//	System.out.println(allPlays.size());
 	}
-	
+	/** 
+	 * Test if array a intersects (ordered) with array b: if there is an i for which a[i[ == b[i];
+	 * @param a
+	 * @param b
+	 * @return
+	 */
 	public static boolean test(int a[], int[] b) {
 		boolean ans = false;
 		int len = a.length;
@@ -82,7 +76,7 @@ public class Wolf_5_Solution{
 		}
 		return ans;
 	}
-	
+	// next step (of the wolf) - going up (null if 5).
 	public static int[] up(int[] p) {
 		int len = p.length;
 		int[] ans = new int[len+1];
@@ -92,7 +86,7 @@ public class Wolf_5_Solution{
 		else {ans[len] = last+1;}
 		return ans;
 	}
-	
+	// next step (of the wolf) - going down (null if 1).
 	public static int[] down(int[] p) {
 		int len = p.length;
 		int[] ans = new int[len+1];
@@ -112,7 +106,20 @@ public class Wolf_5_Solution{
 		}
 		return ans;
 	}
-	
+	/**
+	 * Computes all the 5^s options.
+	 * @param s
+	 * @return
+	 */
+	public static ArrayList<int[]> allOption(int s) {
+		int[][] init = {{1},{2},{3},{4},{5}};
+		ArrayList<int[]> ans = new ArrayList<int[]>();
+		for(int i=0;i<init.length;i++) {ans.add(init[i]);}
+		for(int i=1;i<s;i++) {
+			ans = allOption(ans);
+		}
+		return ans;
+	}
 	public static ArrayList<int[]> allOption(ArrayList<int[]> last) {
 		ArrayList<int[]> ans = new ArrayList<int[]>();
 		for(int i=0;i<last.size();i++) {
@@ -124,7 +131,6 @@ public class Wolf_5_Solution{
 		}
 		return ans;
 	}
-	
 	public static int[] add(int[] org, int v) {
 		int len = org.length;
 		int[] ans = new int[len+1];
@@ -132,7 +138,6 @@ public class Wolf_5_Solution{
 		ans[len] = v;
 		return ans;
 	}
-	
 	public static boolean testSolution(ArrayList<int[]> allOpt, ArrayList<int[]> allMovements) {
 		boolean ans = false;
 		for(int i=0;i<allOpt.size();i++) {
@@ -147,7 +152,6 @@ public class Wolf_5_Solution{
 		}
 		return ans;
 	}
-	
 	private static boolean checkSol(ArrayList<int[]> allMovements, int[] sol) {
 		int cc = 0;
 		for(int t=0;t<allMovements.size();t++) {

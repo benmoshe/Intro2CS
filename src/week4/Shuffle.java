@@ -8,37 +8,60 @@ public class Shuffle {
         a[i] = a[j];
         a[j] = swap;
     }
+    
+    // take as input an array of strings and print them out to standard output
+    public static void show(String[] a) {
+    	System.out.println();
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i]+",");
+        }
+    }
 
     // take as input an array of strings and rearrange them in random order
     public static void shuffle(String[] a) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
-            int r = i + (int) (Math.random() * (n-i));   // between i and n-1
+            int r = (int) (Math.random() * (n));   // between i and n-1
             exch(a, i, r);
         }
     }
-
-    // take as input an array of strings and print them out to standard output
-    public static void show(String[] a) {
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
+    
+    public static void sort(String[] arr) {
+    	int len = arr.length;
+    	for(int i=0;i<len;i=i+1) {
+    		int min = minInd(arr,i,len); // min index(min,lenght)
+    		exch(arr,i,min); 			 // swaps the ith index with the min(i,min)
+    	}
     }
-
-
+    
+    public static int minInd(String[] a, int min, int max) {
+    	int ans = min;
+    	for(int i=min+1;i<max && i<a.length; i=i+1) {
+    		if(a[i].compareTo(a[ans])<0 ) {
+    			ans=i;
+    		}
+    	}
+    	return ans;
+    }
+    
     public static void main(String[] args) { 
-        // read all lines from standard input
-        String[] a = {"123", "abc", "cba", "321", "aa", "ba12"};
-
+    	int size = 10;
+        String[] a = new String[size];
+        for(int i=0;i<a.length;i=i+1) {
+        	a[i] = "_"+i;
+        }
         // shuffle array and print permutation
+        show(a);
+        System.out.println();
+        
         shuffle(a);
         show(a);
-
-        System.out.println();
 
         // do it again
         shuffle(a);
         show(a);
-
+        
+        sort(a);
+        show(a);
     }
 }

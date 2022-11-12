@@ -1,6 +1,7 @@
 package week3;
 /**
- * This class contains several simple examples for static functions and basic testing
+ * This class contains several simple examples for static functions and 
+ * basic testing using JUnit.
  * @author boaz.ben-moshe
  *
  */

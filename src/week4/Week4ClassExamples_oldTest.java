@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class Week4ClassExamplesTest {
+class Week4ClassExamples_oldTest {
 
 	@Test
 	void testIsPerfect() {

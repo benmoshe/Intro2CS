@@ -1,6 +1,18 @@
 package week4;
+/**
+ * Output:
+ * _0,_1,_2,_3,_4,_5,_6,_7,_8,_9,
 
-public class Shuffle { 
+   _3,_9,_7,_6,_0,_5,_2,_4,_1,_8,
+   _2,_6,_0,_8,_4,_7,_9,_1,_5,_3,
+   _0,_1,_2,_3,_4,_5,_6,_7,_8,_9,
+ * 
+ * 
+ * 
+ * @author boazben-moshe
+ *
+ */
+public class ShuffleAndSort { 
 
     // swaps array elements i and j
     public static void exch(String[] a, int i, int j) {
@@ -21,7 +33,7 @@ public class Shuffle {
     public static void shuffle(String[] a) {
         int n = a.length;
         for (int i = 0; i < n; i++) {
-            int r = (int) (Math.random() * (n));   // between i and n-1
+            int r = i+ (int) (Math.random() * (n-i));   // between i and n-1
             exch(a, i, r);
         }
     }
@@ -29,7 +41,7 @@ public class Shuffle {
     public static void sort(String[] arr) {
     	int len = arr.length;
     	for(int i=0;i<len;i=i+1) {
-    		int min = minInd(arr,i,len); // min index(min,lenght)
+    		int min = maxInd(arr,i,len); // min index(min,lenght)
     		exch(arr,i,min); 			 // swaps the ith index with the min(i,min)
     	}
     }
@@ -43,7 +55,15 @@ public class Shuffle {
     	}
     	return ans;
     }
-    
+    public static int maxInd(String[] a, int min, int max) {
+    	int ans = min;
+    	for(int i=min+1;i<max && i<a.length; i=i+1) {
+    		if(a[i].compareTo(a[ans])>0 ) {
+    			ans=i;
+    		}
+    	}
+    	return ans;
+    }
     public static void main(String[] args) { 
     	int size = 10;
         String[] a = new String[size];

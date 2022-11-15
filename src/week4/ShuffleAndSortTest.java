@@ -3,9 +3,19 @@ package week4;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
-
+/**
+ * This JUnit tester is rather complicated, the main concept is to 
+ * test if the shuffle function is computing a random permutation. 
+ * The test is performed by computing a large set of "shuffles" and then
+ * counting the location of each element in the array. 
+ * The counting is being done using a 2D array. The counting of each location
+ * is tested to be +-10% of the evarage.
+ * 
+ * @author boaz.ben-moshe
+ *
+ */
 class ShuffleAndSortTest {
-
+	public static double EPS = 0.1;  // 10%
 	@Test
 	void testShuffle() {
 		int size = 10, norm=1000;
@@ -45,12 +55,11 @@ class ShuffleAndSortTest {
     			double d1 = a[j][i];
     			double d = (d1 - norm)/norm;
     			double eps = Math.abs(d);
-    			if(eps>0.1) {ok = false;};
+    			if(eps>EPS) {ok = false;};
     		}
     	}
 		return ok;
 	}
-	 // take as input an array of strings and print them out to standard output
 	private static void show(double[][] a) {
     	System.out.println();
     	for (int j = 0; j < a.length; j++) {

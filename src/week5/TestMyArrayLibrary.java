@@ -1,5 +1,7 @@
 package week5;
 
+import week4.MyArrayLibrary;
+
 public class TestMyArrayLibrary {
 	
 	public static void main(String[] args) {

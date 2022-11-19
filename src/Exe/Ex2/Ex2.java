@@ -7,7 +7,7 @@ package Exe.Ex2;
  * Your goal is to complete the functions below, see the marking: // *** add your code here ***
  *
  * @author boaz.benmoshe
- *
+ * 
  */
 public class Ex2 {
 	/** Epsilon value for numerical computation, it serves as a "close enough" threshold. */

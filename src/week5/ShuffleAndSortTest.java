@@ -9,16 +9,16 @@ import org.junit.jupiter.api.Test;
  * The test is performed by computing a large set of "shuffles" and then
  * counting the location of each element in the array. 
  * The counting is being done using a 2D array. The counting of each location
- * is tested to be +-10% of the evarage.
+ * is tested to be +-3% of the evarage.
  * 
  * @author boaz.ben-moshe
  *
  */
 class ShuffleAndSortTest {
-	public static double EPS = 0.1;  // 10%
+	public static double EPS = 0.03;  // 3%
 	@Test
 	void testShuffle() {
-		int size = 10, norm=1000;
+		int size = 10, norm=10000;
 		int iter = size*norm;
 		double[][] test2D = new double[size][size];
 		for(int i=0;i<iter;i++) {
@@ -54,8 +54,8 @@ class ShuffleAndSortTest {
     		for (int i = 0; i < a[0].length; i++) {
     			double d1 = a[j][i];
     			double d = (d1 - norm)/norm;
-    			double eps = Math.abs(d);
-    			if(eps>EPS) {ok = false;};
+    			double err = Math.abs(d);
+    			if(err>EPS) {ok = false;};
     		}
     	}
 		return ok;

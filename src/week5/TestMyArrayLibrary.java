@@ -12,7 +12,7 @@ public class TestMyArrayLibrary {
 		System.out.println("Int array:");
 		MyArrayLibrary.printArray(arr);
 		arr = MyArrayLibrary.randomIntArray(SIZE, LOW, HIGH);
-		System.out.println("Int array:");
+	  	System.out.println("Int array:");
 		MyArrayLibrary.printArray(arr);
 			
 		int[][] mat  = MyArrayLibrary.randomIntMatrix(COLS, ROWS, LOW, HIGH);

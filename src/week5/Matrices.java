@@ -1,4 +1,7 @@
 package week5;
+
+import java.util.Scanner;
+
 public class Matrices {
 
     public static void main(String[] args) {
@@ -6,13 +9,14 @@ public class Matrices {
     	// create a square matrix
     	final int N = 3;
     	int[][] matrix = new int[N][N];
-
+    	Scanner sc = new Scanner(System.in);
     	// ask user to fill it
     	for (int i=0; i<N; i++)
     	{
     		for (int j=0; j<N; j++)
     		{
-    			int num = MyConsole.readInt("Enter row " + i + " column " + j + ":");
+    			System.out.println("Enter row " + i + " column " + j + ":");
+    			int num = sc.nextInt();
     			matrix[i][j] = num;
     		}
     	}

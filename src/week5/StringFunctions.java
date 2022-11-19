@@ -4,9 +4,12 @@ public class StringFunctions {
 	public static void main(String[] a) {
 		String t = "12321";
 		boolean v = isSimetric(t);
-		String rev_t = reverse(t);
-		System.out.println("str: "+t);
-		System.out.println("rev(str): "+rev_t);
+		String s = "12345";
+		String rev_s = reverse(s);
+		String rev2_s = reverse(rev_s);
+		System.out.println("str: "+t+" isSimetric: "+v);
+		System.out.println("s="+s+",  rev(s)="+rev_s+",  rev(rev(s))="+rev2_s);
+		System.out.println(s.equals(rev2_s));
 		String words = "these are few words ...";
 		String[] ww = words.split(" ");
 		for(int i=0;i<ww.length;i=i+1) {
@@ -27,13 +30,9 @@ public class StringFunctions {
 	}
 	public static String reverse(String s) {
 		String ans = "";
-//		for(int i=0;i<s.length();i=i+1) {
-//			ans=s.charAt(i)+ans;
-//		}
 		for(int i=s.length()-1; i>=0;i=i-1) {
 			ans=ans+s.charAt(i);
 		}
-
 		return ans;
 	}
 }

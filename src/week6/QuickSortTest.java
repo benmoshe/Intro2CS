@@ -4,13 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import week7.MyArrayLibrary;
-
 class QuickSortTest {
-
 	@Test
 	void testSort() {
-		double[] arr = {1,-3.2,1,5,-4.2};
+		double[] arr = {1,-3.2,1,5,-3.2};
 		QuickSort.sort(arr);
 		boolean b = MyArrayLibrary.isSortedAscending(arr);
 		if(b!=true) {

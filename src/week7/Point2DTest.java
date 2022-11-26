@@ -96,7 +96,6 @@ class Point2DTest {
 		Point2D t1 = _p1.add(eps);
 		assertFalse(_p1.close2equals(t1, eps1));
 		assertTrue(_p1.close2equals(t1, eps1*2));
-		
 	}
 
 }

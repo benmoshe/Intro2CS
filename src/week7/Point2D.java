@@ -1,6 +1,7 @@
 /**
  * This class represents a 2D point in the plane.
- * Our first example of Object Oriented Programming
+ * Our first example of Object Oriented Programming:
+ * 
  */
 
 package week7;
@@ -12,22 +13,30 @@ public class Point2D {
     private double _x;
     private double _y;
     
+    /**
+     * Standard Constructor  
+     * @param a - first parameter (x)
+     * @param b - second parameter (y)
+     */
     public Point2D(double a,double b) {
     	_x=a; _y=b;
     }
+    /**
+     * Copy Constructor  
+     * @param p - the original point (to be copied).
+      */
     public Point2D(Point2D p) {
        this(p.x(), p.y());
     }
+    /**
+     * String Constructor  
+     * @param s - assuming the point is in the folliwing (String) structure: 
+     * "-1.2,5.3" --> (-1.2,5.3) ;
+     */
     public Point2D(String s) {
-        try {
-            String[] a = s.split(",");
-            _x = Double.parseDouble(a[0]);
-            _y = Double.parseDouble(a[1]);
-        }
-        catch(IllegalArgumentException e) {
-            System.err.println("ERR: got wrong format string for Point2D init, got:"+s+"  should be of format: x,y");
-            throw(e);
-        }
+    	String[] a = s.split(",");
+    	_x = Double.parseDouble(a[0]);
+    	_y = Double.parseDouble(a[1]);
     }
     public double x() {return _x;}
     public double y() {return _y;}
@@ -49,14 +58,20 @@ public class Point2D {
     {
         return this.distance(ORIGIN);
     }
-    public double distance(Point2D p2)
-    {
+    /**
+     * dist(this,p2) = Math.sqrt(dx^2 + dy^2)
+     * @param p2 - the other point from which the distance to this point is computed.
+     * @return
+     */
+    public double distance(Point2D p2) {
         double dx = this.x() - p2.x();
         double dy = this.y() - p2.y();
         double t = (dx*dx+dy*dy);
         return Math.sqrt(t);
     }
-
+    /**
+     *  return true iff: this point equils to p.
+     */
     public boolean equals(Object p)
     {
         if(p==null || !(p instanceof Point2D)) {return false;}

@@ -36,7 +36,8 @@ public class Ex2 {
 	public static double f(double[] poly, double x) {
 		double ans = 0;
 		// *** add your code here ***
-		
+		String s = "x^2 +3.1x -1";
+		String[] w = s.split(" ");
 		// **************************
 		return ans;
 	}

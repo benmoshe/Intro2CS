@@ -1,4 +1,4 @@
-package week7;
+package week6;
 /**
  * Java program for implementation of QuickSort 
  * @author Rajat Mishra, from: https://www.geeksforgeeks.org/quick-sort/

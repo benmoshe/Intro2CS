@@ -2,14 +2,14 @@ package week6;
 import java.util.Arrays;
 /**
  * output for 40,000 int array:
- * Bubble sort time = 2.617 secs,  is sorted? true
- * Selection sort time = 0.536 secs,  is sorted? true
- * Insertion sort time = 0.818 secs,  is sorted? true
- * My slow Insertion sort time = 4.253 secs,  is sorted? true
- * Recursive Merge sort time = 0.025 secs,  is sorted? true
- * Java sort time = 0.023 secs,  is sorted? true
- *
- * Found at index 20034 the item 20000
+ * Bubble sort time = 1.644 secs,  is sorted? true
+ * Selection sort time = 0.352 secs,  is sorted? true
+ * Insertion sort time = 0.585 secs,  is sorted? true
+ * My slow Insertion sort time = 2.881 secs,  is sorted? true
+ * Recursive Merge sort time = 0.014 secs,  is sorted? true
+ * Java sort time = 0.021 secs,  is sorted? true
+
+Found at index 20057 the item 20000
  *
  */
 public class Sort {
@@ -119,23 +119,29 @@ public class Sort {
 		}
 		
 		//////////// MERGE SORT ////////////////
-		
 		public static void mergeSort(int[] a) {
+			int len = a.length;
+			double[] tmp = new double[len];
+			for(int i=0;i<len;i=i+1) {tmp[i]=a[i];}
+			mergeSort(tmp);
+			for(int i=0;i<len;i=i+1) {a[i] = (int)tmp[i];}
+		}
+		public static void mergeSort(double[] a) {
 			int size = a.length;
 			if(size>=2) {
 				int mid = size/2;
-				int[] left = getSubArray(a,0,mid);
-				int[] right = getSubArray(a,mid,size);
+				double[] left = getSubArray(a,0,mid);
+				double[] right = getSubArray(a,mid,size);
 				mergeSort(left); // recursive call
 				mergeSort(right); // recursive call
-				int[] merge = mergeArrays(left,right);
+				double[] merge = mergeArrays(left,right);
 				for(int i=0;i<merge.length;i=i+1) {
 					a[i] = merge[i];
 				}
 			}
 		}
-		public static int[] getSubArray(int[] a, int min, int max) {
-			int[] ans = new int[max-min];
+		public static double[] getSubArray(double[] a, int min, int max) {
+			double[] ans = new double[max-min];
 			for(int i=min;i<max;i=i+1) {
 				ans[i-min] = a[i];
 			}
@@ -145,12 +151,12 @@ public class Sort {
 		/**
 		 * This function merges two sorted arrays into a single 
 		 * sorted array.
-		 * @param arr1
+		 * @param arr1 a sorted a
 		 * @param arr2
 		 * @return
 		 */
-		public  static  int[]  mergeArrays(int arr1[],  int arr2[]) {
-		    int[]  res = new int[arr1.length + arr2.length];
+		public  static  double[]  mergeArrays(double arr1[],  double arr2[]) {
+			double[]  res = new double[arr1.length + arr2.length];
 			int i=0, j=0;
 			while ( i < arr1.length && j < arr2.length )	{
 				if (arr1[i] <= arr2[j]) { 

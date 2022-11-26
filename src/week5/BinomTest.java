@@ -6,7 +6,42 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
+/**
+ * binom(8,2) = b(7,1) + b(7,2)
+binom(7,2) = b(6,1) + b(6,2)
+binom(6,2) = b(5,1) + b(5,2)
+binom(5,2) = b(4,1) + b(4,2)
+binom(4,2) = b(3,1) + b(3,2)
+binom(3,2) = b(2,1) + b(2,2)
+binom(2,1) = b(1,0) + b(1,1)
+binom(3,1) = b(2,0) + b(2,1)
+binom(2,1) = b(1,0) + b(1,1)
+binom(4,1) = b(3,0) + b(3,1)
+binom(3,1) = b(2,0) + b(2,1)
+binom(2,1) = b(1,0) + b(1,1)
+binom(5,1) = b(4,0) + b(4,1)
+binom(4,1) = b(3,0) + b(3,1)
+binom(3,1) = b(2,0) + b(2,1)
+binom(2,1) = b(1,0) + b(1,1)
+binom(6,1) = b(5,0) + b(5,1)
+binom(5,1) = b(4,0) + b(4,1)
+binom(4,1) = b(3,0) + b(3,1)
+binom(3,1) = b(2,0) + b(2,1)
+binom(2,1) = b(1,0) + b(1,1)
+binom(7,1) = b(6,0) + b(6,1)
+binom(6,1) = b(5,0) + b(5,1)
+binom(5,1) = b(4,0) + b(4,1)
+binom(4,1) = b(3,0) + b(3,1)
+binom(3,1) = b(2,0) + b(2,1)
+binom(2,1) = b(1,0) + b(1,1)
+28
 
+binom(30,15) took dt=399.28  msec.
+binomFast(30,15) took dt=0.061  msec.
+binom(30,15)=155117520
+ * @author boazben-moshe
+ *
+ */
 class BinomTest {
 
 	@Test

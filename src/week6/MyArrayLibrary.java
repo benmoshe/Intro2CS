@@ -16,7 +16,13 @@ public class MyArrayLibrary {
 			arr[i] = (int)(Math.random()*(b-a)) + a;
 		return arr;
 	}
-	
+	public static double[] randomDoubleArray(int size, int min, int max){
+		double[]arr = new double[size];
+		double dx = max-min;
+		for(int i=0; i<size; i=i+1)
+			arr[i] = Math.random()*(dx) + min;
+		return arr;
+	}
 	public static void printArray(int[] arr){
 		int i;
 		for(i=0; i<arr.length-1; i=i+1)
@@ -60,5 +66,21 @@ public class MyArrayLibrary {
 				return false;}
 		}
 		return true;
+	}
+	public static boolean isSortedAscending(double[] arr){
+		boolean ans = true;
+		for (int i = 1; i < arr.length && ans; i++) {
+			if (arr[i-1] > arr[i]) {
+				ans = false; }
+		}
+		return ans;
+	}
+	public static boolean isSortedDescending(double[] arr){
+		boolean ans = true;
+		for (int i = 1; i < arr.length && ans; i++) {
+			if (arr[i-1] < arr[i]) {
+				ans = false;}
+		}
+		return ans;
 	}
 }

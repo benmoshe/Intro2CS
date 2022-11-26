@@ -2,18 +2,28 @@ package week6;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.util.Arrays;
+import java.util.concurrent.TimeUnit;
+
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Timeout;
 
 class SortTest {
-
+	public static final int K = 1000, M = K*K;
+	public static int[] arrK = null;
+	public static int[] arrM = null;
+	public static double[] arrDoubleM = null;
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
+		
 	}
-
 	@BeforeEach
 	void setUp() throws Exception {
+		arrK = MyArrayLibrary.randomIntArray(K, K);
+		arrM = MyArrayLibrary.randomIntArray(M, M);
+		arrDoubleM = MyArrayLibrary.randomDoubleArray(M, 0, M);
 	}
 	@Test 
 	void testMergeSort() {
@@ -31,9 +41,9 @@ class SortTest {
 	}
 	@Test 
 	void testMerge() {
-		int[] a1 = {1,3,7,9};
-		int[] a2 = {1,2,5,17,34};
-		int[] a12 = Sort.mergeArrays(a1, a2);
+		double[] a1 = {1,3,7,9};
+		double[] a2 = {1,2,5,17,34};
+		double[] a12 = Sort.mergeArrays(a1, a2);
 		boolean isSorted = MyArrayLibrary.isSortedAscending(a12);
 		assertTrue(isSorted);
 	}
@@ -89,9 +99,34 @@ class SortTest {
 			fail("arr should be sorted");
 		}
 	}
-
-	
-/** DIY: do complete the below Unit Tests as shown above!
+/////////////// Performance Testing /////////////
+	@Test
+	void testMergeSort1() {
+			/////////// Recursive Merge Sort 
+		long start = System.currentTimeMillis();
+		Sort.mergeSort(arrM);
+		long end = System.currentTimeMillis();
+		double dt_sec = (end-start)/1000.0; 
+		boolean isSorted = MyArrayLibrary.isSortedAscending(arrM);
+		System.out.println("Recursive Merge sort time = "+dt_sec+" secs,  is sorted? "+ isSorted);
+		assertTrue(isSorted);
+		assertTrue(dt_sec<1);
+	}
+	@Test
+	@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
+	void testMergeSort2() {
+		Sort.mergeSort(arrDoubleM);
+		boolean isSorted = MyArrayLibrary.isSortedAscending(arrDoubleM);
+		assertTrue(isSorted);
+	}
+	@Test
+	@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)
+	void testQuickSort1() {
+		QuickSort.sort(arrDoubleM);
+		boolean isSorted = MyArrayLibrary.isSortedAscending(arrDoubleM);
+		assertTrue(isSorted);
+	}
+/** DIY: do complete the belowUnit Tests  (and many others) as shown above!
 	@Test
 	void testBinarySearch() {
 		fail("Not yet implemented");

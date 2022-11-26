@@ -1,8 +1,10 @@
-package week7;
+package week6;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+
+import week7.MyArrayLibrary;
 
 class QuickSortTest {
 

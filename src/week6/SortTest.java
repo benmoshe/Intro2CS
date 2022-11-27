@@ -20,7 +20,7 @@ class SortTest {
 		
 	}
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp() {
 		arrK = MyArrayLibrary.randomIntArray(K, K);
 		arrM = MyArrayLibrary.randomIntArray(M, M);
 		arrDoubleM = MyArrayLibrary.randomDoubleArray(M, 0, M);

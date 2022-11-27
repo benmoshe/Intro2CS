@@ -10,6 +10,14 @@ import java.util.Arrays;
  * Java sort time = 0.021 secs,  is sorted? true
 
 Found at index 20057 the item 20000
+
+Bubble sort time = 1.646 secs,  is sorted? true
+Selection sort time = 0.368 secs,  is sorted? true
+Insertion sort time = 0.643 secs,  is sorted? true
+My slow Insertion sort time = 2.882 secs,  is sorted? true
+Recursive Merge sort time = 0.018 secs,  is sorted? true
+Java sort time = 0.025 secs,  is sorted? true
+
  *
  */
 public class Sort {
@@ -23,7 +31,6 @@ public class Sort {
 	
 	public static void bubbleSort(int arr[]) {
 		boolean hasChanged=true;
-
 		for (int i=arr.length-1 ; i > 0 && hasChanged ; i-- )
 		{
 			hasChanged = false;

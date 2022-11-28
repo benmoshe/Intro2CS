@@ -8,7 +8,10 @@ import java.awt.Color;
  * Written for 101 java course it uses simple static functions to allow a 
  * "Singleton-like" implementation.
  * You should change this class!
- *
+ * 
+ * @author
+ * ID1: 
+ * ID2: 
  */
 public class Ex3 {
 	private static  Map2D _map = null;

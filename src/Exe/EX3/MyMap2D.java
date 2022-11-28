@@ -1,7 +1,12 @@
 package Exe.EX3;
 /**
  * This class implements the Map2D interface.
- * You should change (implement) this class as part of Ex3. */
+ * You should change (implement) this class as part of Ex3. 
+ * 
+ * @author
+ * ID1: 
+ * ID2: 
+ * */
 public class MyMap2D implements Map2D{
 	private int[][] _map;
 	

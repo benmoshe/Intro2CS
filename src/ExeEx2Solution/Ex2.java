@@ -151,7 +151,7 @@ public class Ex2 {
 	/** Given a polynom (p), a range [x1,x2] and an epsilon eps. 
 	 * This function computes an x value (x1<=x<=x2) for which |p(x)| < eps, 
 	 * assuming p(x1)*p(x1) <= 0. 
-	 * This function should be implemented recursivly.
+	 * This function should be implemented recursively.
 	 * @param p - the polynom
 	 * @param x1 - minimal value of the range
 	 * @param x2 - maximal value of the range
@@ -295,7 +295,7 @@ public class Ex2 {
 		return ans;
 	}
 	/**
-	 * This function coputes a compact copy of the array p:
+	 * This function computes a compact copy of the array p:
 	 *  compactCopy({1,0,2,0,0} --> {1,0,2}
 	 *  compactCopy({1,0} --> {1}
 	 *  compactCopy({0} --> {0}

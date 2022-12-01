@@ -1,10 +1,10 @@
-package ExeEx2Solution;
+package Exe.Ex2;
 /** 
  * This class represents a set of functions on a polynom - represented as array of doubles.
  * @author boaz.benmoshe
  *
  */
-public class Ex2 {
+public class Ex2Sol {
 	/** Epsilon value for numerical computation, it servs as a "close enough" threshold. */
 	public static final double EPS = 0.001; // the epsilon to be used for the root approximation.
 	/** The zero polynom is represented as an array with a single (0) entry. */
@@ -43,13 +43,13 @@ public class Ex2 {
 		if(p1!=null || p2 != null ) {
 			if(p1 ==null || p2 == null) {ans = false;}
 			else {
-				p1 = Ex2.compactCopy(p1);
-				p2 = Ex2.compactCopy(p2);
+				p1 = Ex2Sol.compactCopy(p1);
+				p2 = Ex2Sol.compactCopy(p2);
 				if(p1.length!= p2.length) {ans = false;}
 				else {
 					for(int i=0;i<p1.length;i++) {
 						double d = Math.abs(p1[i]-p2[i]);
-						if(d>=Ex2.EPS) {ans = false;}
+						if(d>=Ex2Sol.EPS) {ans = false;}
 					}
 				}
 			}

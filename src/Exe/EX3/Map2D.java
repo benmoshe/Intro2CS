@@ -89,19 +89,16 @@ public interface Map2D {
 	/**
 	 * Fills the area connected to p with the same color - with the new Color new-V. 
 	 * @param p
-	 * @param new_v
-	 * @return
+	 * @param new_v - the new value which should be used for filling.
+	 * @return the number of "pixels" (or entries) in the map which were "painted" in the new_v.
 	 */
 	public int fill(Point2D p, int new_v);
 	/**
 	 * Fills the area connected to [x,y] with the same color - with the new Color new_v. 
-	 * @param p
-	 * @param new_v
-	 * @return
-	 * @param x
+	 * @param x 
 	 * @param y
-	 * @param new_v
-	 * @return
+	 * @param new_v - the new value which should be used for filling.
+	 * @return the number of "pixels" (or entries) in the map which were "painted" in the new_v.
 	 */
 	public int fill(int x, int y, int new_v);
 	/**

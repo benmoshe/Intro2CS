@@ -103,14 +103,15 @@ public interface Map2D {
 	public int fill(int x, int y, int new_v);
 	/**
 	 * Compute the Shortest path starting from p1 till p2, assuming p1 and p2 has the same color on the
-	 * map.
+	 * map. In case there is no such path (between p1 and p2) return null;
 	 * @param p1
 	 * @param p2
 	 * @return an array with all the points connecting p1 and p2 in the shortest path (might be several such shortest paths),
+	 * 
 	 */
 	public Point2D[] shortestPath(Point2D p1, Point2D p2);
 	/**
-	 * Compute the length shortest path 
+	 * Compute the length shortest path, if none returns -1;
 	 * @param p1
 	 * @param p2
 	 * @return

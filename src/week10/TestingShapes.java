@@ -1,13 +1,20 @@
-package week10;
+package week11;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+
+import week10.Circle2D;
+import week10.Ellipse2D;
+import week10.GeoShape;
+import week10.Point2D;
 
 public class TestingShapes {
 
 	public static void main(String[] args) {
 	//	test1();
-		test2();
+	//	test2();
+		test3();
 	}
 	public static void test1() {
 		GeoShape[] sh = new GeoShape[4];
@@ -75,8 +82,8 @@ public class TestingShapes {
 			for(int a=0;a<sh.length;a=a+1) {
 				GeoShape cr = sh[a];
 				if(cr instanceof Point2D) {numbers[ind_point]+=1;}
-				if(cr instanceof Point2D) {numbers[ind_circle]+=1;}
-				if(cr instanceof Point2D) {numbers[ind_ellipse]+=1;}
+				if(cr instanceof Circle2D) {numbers[ind_circle]+=1;}
+				if(cr instanceof Ellipse2D) {numbers[ind_ellipse]+=1;}
 			}
 			for(int a=0;a<numbers.length;a=a+1) {
 				if(numbers[a]>0 ) {ans+=1;}
@@ -113,7 +120,7 @@ public class TestingShapes {
 		}
 		return ans;
 	}
-	public static int numberOfClasses_yet_another_algo(GeoShape[] sh) {
+	public static int numberOfClasses_yet_another_algo(Object[] sh) {
 		if(sh==null || sh.length==0) return 0;
 		//
 		ArrayList<String> shc = new ArrayList<String>(); // ??
@@ -122,5 +129,14 @@ public class TestingShapes {
 			if(!shc.contains(cr)) {shc.add(cr);}
 		}
 		return shc.size();
+	}
+	public static void test3() {
+		//var ll = new ArrayList<String>();
+		ArrayList<String> ll = new ArrayList<String>();
+		for(int a =0;a<6;a=a+1) {ll.add(""+a);}
+		Iterator<String> iter = ll.iterator();
+		while(iter.hasNext()) {
+			System.out.println(iter.next());
+		}
 	}
 }

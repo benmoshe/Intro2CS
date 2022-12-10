@@ -6,13 +6,12 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import week7.Point2D;
+
 class Point2DTest {
 	private static Point2D _oo, _p1, _p2;
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
-		
-		
-	}
+	static void setUpBeforeClass() throws Exception {;}
 
 	@BeforeEach
 	void setUp() throws Exception {

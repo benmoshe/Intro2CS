@@ -1,23 +1,24 @@
 package week8;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-class PointsTest {
+import week7.Point2D;
+
+class PointContainerTest {
 
 	@Test
 	void testPoints() {
-		Points ps = new Points();
+		PointContainer ps = new PointContainer();
 		assertNotNull(ps);
 	}
 
 	@Test
 	void testSize() {
 		int size = 10;
-		Points ps = new Points();
+		PointContainer ps = new PointContainer();
 		for(int i=0;i<size;i=i+1) {
-			Point p = randomPoint(100,100);
+			Point2D p = randomPoint(100,100);
 			ps.add(p);
 		}
 		assertEquals(ps.size(), size);
@@ -25,27 +26,27 @@ class PointsTest {
 
 	@Test
 	void testGet() {
-		Point p = randomPoint(100,100);
-		Points ps = new Points();
+		Point2D p = randomPoint(100,100);
+		PointContainer ps = new PointContainer();
 		ps.add(p);
-		Point p0 = ps.get(0);
+		Point2D p0 = ps.get(0);
 		assertEquals(p,p0);
 	}
 
 	@Test
 	void testAdd() {
 		int size = 1000;
-		Points ps = new Points();
+		PointContainer ps = new PointContainer();
 		for(int i=0;i<size;i=i+1) {
-			Point p = randomPoint(10,10);
+			Point2D p = randomPoint(10,10);
 			ps.add(p);
 		}
 		assertEquals(ps.size(), size);
 	}
-	private static Point randomPoint(double x, double y) {
+	private static Point2D randomPoint(double x, double y) {
 		double x0 = Math.random()*x;
 		double y0 = Math.random()*y;
-		Point ans = new Point(x0,y0);
+		Point2D ans = new Point2D(x0,y0);
 		return ans;
 	}
 }

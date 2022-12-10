@@ -1,4 +1,4 @@
-package week12;
+package week10;
 /**
  * This interface represents a set of operations on list of Strings
  * @author boaz.benmoshe

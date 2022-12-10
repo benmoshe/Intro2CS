@@ -1,26 +1,27 @@
-package week11;
+package week10;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 
-import week10.Circle2D;
-import week10.Ellipse2D;
-import week10.GeoShape;
-import week10.Point2D;
+import week8.Circle2D;
+import week8.Rect2D;
+import week8.GeoShape;
+import week7.Point2D;
 
 public class TestingShapes {
 
 	public static void main(String[] args) {
-	//	test1();
+		test1();
 	//	test2();
-		test3();
+	//	test3();
 	}
 	public static void test1() {
 		GeoShape[] sh = new GeoShape[4];
 		Point2D p = new Point2D(1,0.3);
-		sh[0] = p;
-		sh[1] = new Point2D(-1,3);
+		sh[0] = new Circle2D(p, 2.5);
+		sh[1] = new Rect2D(p, new Point2D(-1,3));
+		p.move(p);
 		sh[2] = new Circle2D(p, 2.5);
 		sh[3] = sh[2].copy();
 		
@@ -49,13 +50,12 @@ public class TestingShapes {
 		GeoShape[] sh = new GeoShape[size];
 		for(int i=0;i<sh.length;i=i+1) {
 			double d = Math.random(); // [0,1)
-			if(d<0.3) { sh[i] = new Point2D(i,i);}
-			if(d>=0.3 && d<0.6) { sh[i] = new Circle2D(new Point2D(Point2D.ORIGIN), i);}
+			if(d<0.6) { sh[i] = new Circle2D(new Point2D(Point2D.ORIGIN), i);}
 			if(d>=0.6) { 
 				Point2D p1 = new Point2D(i,i);
 				Point2D p2 = new Point2D(i*2,i*3);
 				double rad = p1.distance(p2)+3;
-				sh[i] = new Ellipse2D(p1,p2,rad);
+				sh[i] = new Rect2D(p1,p2);
 			}
  		}
 		int n = numberOfClasses_better(sh);
@@ -83,7 +83,7 @@ public class TestingShapes {
 				GeoShape cr = sh[a];
 				if(cr instanceof Point2D) {numbers[ind_point]+=1;}
 				if(cr instanceof Circle2D) {numbers[ind_circle]+=1;}
-				if(cr instanceof Ellipse2D) {numbers[ind_ellipse]+=1;}
+
 			}
 			for(int a=0;a<numbers.length;a=a+1) {
 				if(numbers[a]>0 ) {ans+=1;}

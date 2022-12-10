@@ -1,4 +1,4 @@
-package week12;
+package week10;
 /**
  * a Link in a LinkedList of Strings
  * @author boaz.benmoshe

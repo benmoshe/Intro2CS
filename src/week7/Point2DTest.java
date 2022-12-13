@@ -42,6 +42,7 @@ class Point2DTest {
 		String p_str = _p2.toString();
 		_p1 = new Point2D(p_str);
 		String t = _p1.toString();
+		assertEquals(t,p_str);
 		assertEquals(_p1,_p2);
 	}
 

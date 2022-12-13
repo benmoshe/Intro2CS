@@ -1,12 +1,15 @@
-package week8;
+package week8.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import week7.Point2D;
+import week8.PointContainer;
 
 class PointContainerTest {
-
+/**
+ * 
+ */
 	@Test
 	void testPoints() {
 		PointContainer ps = new PointContainer();
@@ -28,8 +31,9 @@ class PointContainerTest {
 	void testGet() {
 		Point2D p = randomPoint(100,100);
 		PointContainer ps = new PointContainer();
-		ps.add(p);
+		ps.add(new Point2D(p));
 		Point2D p0 = ps.get(0);
+		//ps.get(2);  // debug only
 		assertEquals(p,p0);
 	}
 

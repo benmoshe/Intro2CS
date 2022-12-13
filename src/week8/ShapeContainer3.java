@@ -2,31 +2,31 @@ package week8;
 import week7.Point2D;
 
 /**
- * This class represents a simple collection of Points.
+ * This class represents a simple collection of GeoShape.
  * @author boaz.benmoshe
  *
  */
-public class PointContainer {
+public class ShapeContainer3 {
 	public static final int INIT_SIZE = 10;
-	private Point2D[] _ps = null;
+	private GeoShape[] _ps = null;
 	private int _ind;
 	
-	public PointContainer() {
-		_ps = new Point2D[INIT_SIZE];
+	public ShapeContainer3() {
+		_ps = new GeoShape[INIT_SIZE];
 		_ind = 0;
 	}
 	public int size() {return _ind;}
 	public int capacity() {return _ps.length;}
-	public Point2D get(int i) {
+	public GeoShape get(int i) {
 		if(i<0 || i>= size()) {
 			//System.exit(-1);
-			throw new RuntimeException("ERR: got index of "+i+"  out of range :[0,"+size()+");" );
+			throw new RuntimeException("ERR: ");
 			//return null;
 		}
 		
 		return _ps[i];
 	}
-	public void add(Point2D p) {
+	public void add(GeoShape p) {
 		if(p!=null) {
 			if(isFull()) {resize(size()*2);}
 			_ps[_ind] = p;
@@ -35,6 +35,21 @@ public class PointContainer {
 		else {
 			System.err.println("FUYA: null is not a valid entry for the Point Container");
 		}
+	}
+	public GeoShape remove(int i) {
+		GeoShape ans = null;
+		if(i>=0 && i<size()) {
+			ans = get(i);
+			for(int j=i;j<size()-1;j++) {
+				this._ps[j] = this._ps[j+1];
+			}
+			this._ind--;
+			if(size()*2<this.capacity() && this.capacity()>INIT_SIZE) {
+				int n = (size() + this.capacity())/2;
+				this.resize(n);
+			}
+		}
+		return ans;
 	}
 	/**
 	 * additional methods:
@@ -46,7 +61,7 @@ public class PointContainer {
 		return size() == capacity();
 	}
 	private void resize(int s) {
-		Point2D[] tmp = new Point2D[s];
+		GeoShape[] tmp = new GeoShape[s];
 		for(int i=0;i<size() && i<s ;i=i+1) {
 			tmp[i] = _ps[i];
 		}

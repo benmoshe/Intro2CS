@@ -7,7 +7,7 @@ import week7.Point2D;
  * perimeter, toString and a method (getPoints) for getting the points representing this 
  * GeoShape.
  * 
- * Ex4: you should NOT change this interface!
+ * Do NOT change this interface!
  * @author boaz.benmoshe
  */
 

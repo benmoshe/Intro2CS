@@ -1,8 +1,6 @@
-package week8;
+package week7;
 
-import week7.Point2D;
-
-public class Circle2D implements GeoShape{
+public class Circle2D {
 	private Point2D center = null;
 	private double _rad;
 	
@@ -19,9 +17,9 @@ public class Circle2D implements GeoShape{
 	 */
 	public Circle2D(String s) {
 		String[] a = s.split(",");//{"1","2","3"}
-		double x = Double.parseDouble(a[1]);
-    	double y = Double.parseDouble(a[2]);
-    	double r = Double.parseDouble(a[3]);
+		double x = Double.parseDouble(a[0]);
+    	double y = Double.parseDouble(a[1]);
+    	double r = Double.parseDouble(a[2]);
     	center = new Point2D(x,y);
     	_rad = r;
 	}
@@ -32,10 +30,13 @@ public class Circle2D implements GeoShape{
 	 * 1,2,3 ==> Circle: _center: (1,2), radius: 3 
 	 */
 	public String toString() {
-		String ans = this.getClass().getName()+": " + center.toString()+","+this.getRad();
+		String ans = "";
+		ans = ans + center.toString()+","+this.getRad();
 		return ans;
 	}
-
+	public double area() {
+		return Math.pow(_rad, 2) * Math.PI;
+	}
 	public double peremiter() {
 		return 2*this.getRad() * Math.PI;
 	}
@@ -70,24 +71,4 @@ public class Circle2D implements GeoShape{
 	public void move(Point2D p) {
 		this.center.move(p);
 	}
-	@Override
-	public Point2D centerOfMass() {
-		// TODO Auto-generated method stub
-		return new Point2D(this.getCenter());
-	}
-	@Override
-	public double perimeter() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-	@Override
-	public GeoShape copy() {
-		// TODO Auto-generated method stub
-		return new Circle2D(this);
-	}
-	@Override
-	public double area() {
-		return Math.pow(_rad, 2) * Math.PI;
-	}
-	
 }

@@ -12,7 +12,7 @@ public class ShapeComp implements Comparator<GeoShape> {
 			new ShapeComp(ByToString);
 	public static final Comparator<GeoShape> CompByArea = 
 			new ShapeComp(ByArea);
-	ShapeComp(int sf) {_sortFlag = sf;}
+	private ShapeComp(int sf) {_sortFlag = sf;}
 	@Override
 	public int compare(GeoShape o1, GeoShape o2) {
 		int ans = 0;

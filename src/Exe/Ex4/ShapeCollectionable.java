@@ -76,7 +76,7 @@ public interface ShapeCollectionable {
 	public void load(String file);
 
 	/**
-	 * This methods returns the minimal bounding box containing all the shapes in this collection.
+	 * This methods returns the minimal bounding box (axis parallel) containing all the shapes in this collection.
 	 * @return
 	 */
 	 Rect2D getBoundingBox();

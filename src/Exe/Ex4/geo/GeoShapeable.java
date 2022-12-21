@@ -77,7 +77,8 @@ public interface GeoShapeable {
 	 * This method return the dominant point of the shape:
 	 * Segment2D: the two end points
 	 * Circle2D: center and a point on the boundary (in this order).
-	 * Rect2D: min, max (two) points (left-low, right-up)
+	 * Rect2D: min, max (two) points (left-low, right-up), in other words: the min.max points 
+	 * represents the minimum axis parallel rectangle containing this Rect2D.
 	 * Triangle2D: all 3 points
 	 * Polygon2D: all points (in order).
 	 * @return an array with all the points representing this GeoShape.

@@ -1,4 +1,4 @@
-package Exe.Ex4.gui;
+package Exe.Ex4;
 /**
  * This interface represents GUI drawable Shape, 
  * with color, tag and fill values.

@@ -3,6 +3,8 @@ import java.awt.Color;
 import java.awt.event.MouseEvent;
 
 import Exe.Ex4.Ex4_Const;
+import Exe.Ex4.GUIShape;
+import Exe.Ex4.GUI_Shapeable;
 import Exe.Ex4.ShapeCollection;
 import Exe.Ex4.ShapeCollectionable;
 import Exe.Ex4.geo.Circle2D;

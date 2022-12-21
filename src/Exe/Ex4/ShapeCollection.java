@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 import Exe.Ex4.geo.Rect2D;
-import Exe.Ex4.gui.GUI_Shapeable;
 
 /**
  * This class represents a collection of GUI_Shape.

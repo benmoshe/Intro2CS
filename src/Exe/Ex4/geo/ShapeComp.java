@@ -3,7 +3,7 @@ package Exe.Ex4.geo;
 import java.util.Comparator;
 
 import Exe.Ex4.Ex4_Const;
-import Exe.Ex4.gui.GUI_Shapeable;
+import Exe.Ex4.GUI_Shapeable;
 
 /**
  * This class represents a Comparator over GUI_Shapes - 

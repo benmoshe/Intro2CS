@@ -1,4 +1,4 @@
-package Exe.Ex4.gui;
+package Exe.Ex4;
 /**
  * This class implements the GUI_shape.
  * Ex4: you should implement this class!

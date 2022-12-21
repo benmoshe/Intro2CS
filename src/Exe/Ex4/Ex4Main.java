@@ -4,8 +4,6 @@ import java.awt.Color;
 import Exe.Ex4.geo.Circle2D;
 import Exe.Ex4.geo.Point2D;
 import Exe.Ex4.gui.Ex4;
-import Exe.Ex4.gui.GUIShape;
-import Exe.Ex4.gui.GUI_Shapeable;
 /**
  * A very simple main class for basic code for Ex4
  * 

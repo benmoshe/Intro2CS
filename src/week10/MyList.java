@@ -1,6 +1,6 @@
 package week10;
 /**
- * Class 11 improvement example, to be completed as a "self - homework"
+ * Class 10 improvement example, to be completed as a "self - homework"
  * @author boaz.benmoshe
  *
  */
@@ -93,7 +93,7 @@ public class MyList<T> implements MyListInterface<T>{
 		}
 	}
 ///////////////****** Private ****** ///////////////
-	public Link<T> getLink(int i) {
+	private Link<T> getLink(int i) {
 		Link<T> ans = null;
 		if(size()>i) {
 			Link<T> t = _first;
@@ -101,5 +101,29 @@ public class MyList<T> implements MyListInterface<T>{
 			ans = t;
 		}
 		return ans;
+	}
+	///////////////////////////////////////////
+	/**
+	 * a Link in a LinkedList using generics (aka <T>).
+	 * @author boaz.benmoshe
+	 *
+	 */
+	private class Link <T>{
+		private T _data;
+		private Link<T> _next;
+		
+		public Link(T s) {
+			this(s,null);
+		}
+		public Link(T a, Link<T> f) {
+			_data = a;
+			_next = f;
+		}
+		public T getData() {return this._data;}
+		public Link<T> getNext() {return this._next;}
+		public boolean isLast() {return this.getNext() == null;}
+		public void setNext(Link<T> ll) {
+			this._next = ll;
+		}
 	}
 }

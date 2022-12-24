@@ -1,4 +1,4 @@
-package week10;
+package week10.tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
+import week10.MyList;
 import week12.Circle2D;
 import week12.Ellipse2D;
 import week12.GeoShape;

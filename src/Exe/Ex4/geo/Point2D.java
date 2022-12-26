@@ -5,8 +5,7 @@ import Exe.Ex4.Ex4_Const;
 
 /**
  * This class represents a 2D point in the plane.
- * Do NOT change this class! It would be used as is for testing.
- * Ex4: you should edit and update this class!
+ * Ex4: you should implement the scale and the rotation methods (see below).
  * @author boaz.benmoshe
  */
 

@@ -10,7 +10,8 @@ import Exe.EX3.solution.Map2D;
 
 /**
  * This class does NOT contains JUnits tests - as it is somewhat related to Ex4 required JUnits.
- * @author boazben-moshe
+ * A suggested solution for this class will be presented after Ex4 submission date.
+ * @author boaz.benmoshe
  *
  */
 class MapTest {

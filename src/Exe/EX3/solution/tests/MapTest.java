@@ -8,7 +8,11 @@ import org.junit.jupiter.api.Test;
 import Exe.EX3.solution.Map;
 import Exe.EX3.solution.Map2D;
 
-
+/**
+ * This class does NOT contains JUnits tests - as it is somewhat related to Ex4 required JUnits.
+ * @author boazben-moshe
+ *
+ */
 class MapTest {
 
 	@BeforeEach

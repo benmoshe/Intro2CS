@@ -8,6 +8,9 @@ public class BinarySearchTree<T> extends BinaryTree1<T>{
 		public BinarySearchTree(Comparator<T> c) {super(null);_comp=c;}
 		public BinarySearchTree(Comparator<T> c,T a) {super(a);_comp=c;}
 		
+		public Comparator<T> getComp() {
+			return _comp;
+		}
 		@Override
 		public void add(T a) {
 			// TODO Auto-generated method stub
@@ -24,4 +27,22 @@ public class BinarySearchTree<T> extends BinaryTree1<T>{
 				}
 			}
 		}
+		@Override
+		public T find(T t) {
+			T ans = null;
+			if(!this.isEmpty()) {
+				int dir = _comp.compare(this.getRoot(), t);
+				if(dir==0) {ans = getRoot();}
+				if(dir>0) {
+					BinaryTree<T> l = this.getLeft();
+					if(l!=null) {ans = l.find(t);}
+				}
+				if(dir<0) {
+					BinaryTree<T> r = this.getRight();
+					if(r!=null) {ans = r.find(t);}
+				}
+			}
+			return ans;
+		}
+		
 	}

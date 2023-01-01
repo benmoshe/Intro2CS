@@ -49,7 +49,7 @@ class BinarySearchTreeTest {
 	void testAdd2() {
 		int s = BinaryTreeAlgo.size(_bst1);
 		assertEquals(s,0);
-		int size = 100;
+		int size = 10;
 		for(int i=0;i<size;i++) {
 			double d = Math.random();
 			int rr = (int)(d*size);
@@ -57,7 +57,7 @@ class BinarySearchTreeTest {
 		}
 		s = BinaryTreeAlgo.size(_bst1);
 		assertEquals(s,size);
-	//	BinaryTreeAlgo.inOrderPrint(_bst1);
+		BinaryTreeAlgo.inOrderFullPrint(_bst1);
 		ArrayList<String> arr = BinaryTreeAlgo.toArrayList(_bst1);
 	
 		//boolean isBST = BinaryTreeAlgo.isInOrder(_bst1, _bst1.getComp());

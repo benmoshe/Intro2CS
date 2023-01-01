@@ -33,6 +33,19 @@ public static <T> int inOrderPrint(BinaryTree<T> bt) {
 		}
 		return ans;
 	}
+public static <T> int inOrderFullPrint(BinaryTree<T> bt) {
+	return inOrderFullPrint(bt, "");
+}
+public static <T> int inOrderFullPrint(BinaryTree<T> bt, String path) {
+ 	int ans = 0;
+	if(bt!=null && !bt.isEmpty()) {
+		int l = inOrderFullPrint(bt.getLeft(), path+"L");
+		System.out.println(path+":"+bt.getRoot());
+		int r = inOrderFullPrint(bt.getRight(), path+"R");
+		ans = 1+l+r;
+	}
+	return ans;
+}
 public static <T> ArrayList<T> toArrayList(BinaryTree<T> bt) {
 	ArrayList<T> ans = new ArrayList<T>();
 	toArrayList(bt, ans);
@@ -47,17 +60,35 @@ private static <T> void toArrayList(BinaryTree<T> bt, ArrayList<T> arr) {
 		arr.addAll(r);
 	}
 }
+public static <T> T max(BinaryTree<T> bt) {
+	T ans = null;
+	BinaryTree<T> tmp = bt;
+	while(tmp!=null && !tmp.isEmpty()) {
+		ans = tmp.getRoot();
+		tmp = tmp.getRight();
+	}
+	return ans;
+}
+public static <T> T min(BinaryTree<T> bt) {
+	T ans = null;
+	BinaryTree<T> tmp = bt;
+	while(tmp!=null && !tmp.isEmpty()) {
+		ans = tmp.getRoot();
+		tmp = tmp.getLeft();
+	}
+	return ans;
+}
 public static <T>boolean isInOrder(BinaryTree<T> bt, Comparator<T> comp) {
 	boolean ans = true;
 	if(bt!=null && !bt.isEmpty() && !bt.isLeaf()) {
 		ans &= isInOrder(bt.getLeft(), comp);
 		ans &= isInOrder(bt.getRight(), comp);
 		if( !bt.getLeft().isEmpty()) {
-			int cc = comp.compare( bt.getLeft().getRoot(), bt.getRoot());
+			int cc = comp.compare( max(bt.getLeft()), bt.getRoot());
 			if(cc>0) {ans = false;}
 		}
 		if( !bt.getRight().isEmpty()) {
-			int cc = comp.compare( bt.getRoot(), bt.getRight().getRoot());
+			int cc = comp.compare( bt.getRoot(), min(bt.getRight()));
 			if(cc>=0) {ans = false;}
 		}
 	}

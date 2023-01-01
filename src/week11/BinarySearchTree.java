@@ -1,5 +1,24 @@
 package week11;
+/**
+ * 
+LLL:1
+LL:4
+LLRL:6
+LLR:6
+LLRR:7
+L:8
+:8
+RLL:9
+RL:9
+R:9
 
+                       8
+                 8           9
+            4             9
+         1     6        9
+             6   7
+         
+ */
 import java.util.Comparator;
 
 public class BinarySearchTree<T> extends BinaryTree1<T>{
@@ -18,7 +37,7 @@ public class BinarySearchTree<T> extends BinaryTree1<T>{
 			if(this.isEmpty()) {_root = a;}
 			else {
 			//	double d = Math.random();
-				if(_comp.compare(a, _root)<0) {
+				if(_comp.compare(a, _root)<=0) {
 					if(_left==null) {_left = new BinarySearchTree<T>(_comp,a);}
 					else {_left.add(a);}
 				}

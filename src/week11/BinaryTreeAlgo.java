@@ -83,11 +83,11 @@ public static <T>boolean isInOrder(BinaryTree<T> bt, Comparator<T> comp) {
 	if(bt!=null && !bt.isEmpty() && !bt.isLeaf()) {
 		ans &= isInOrder(bt.getLeft(), comp);
 		ans &= isInOrder(bt.getRight(), comp);
-		if( !bt.getLeft().isEmpty()) {
+		if( bt.getLeft()!=null) {
 			int cc = comp.compare( max(bt.getLeft()), bt.getRoot());
 			if(cc>0) {ans = false;}
 		}
-		if( !bt.getRight().isEmpty()) {
+		if( bt.getRight()!=null) {
 			int cc = comp.compare( bt.getRoot(), min(bt.getRight()));
 			if(cc>=0) {ans = false;}
 		}

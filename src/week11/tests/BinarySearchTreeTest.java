@@ -60,8 +60,8 @@ class BinarySearchTreeTest {
 		BinaryTreeAlgo.inOrderFullPrint(_bst1);
 		ArrayList<String> arr = BinaryTreeAlgo.toArrayList(_bst1);
 	
-		//boolean isBST = BinaryTreeAlgo.isInOrder(_bst1, _bst1.getComp());
-		//assertTrue(isBST);
+		boolean isBST = BinaryTreeAlgo.isInOrder(_bst1, _bst1.getComp());
+		assertTrue(isBST);
 	}
 	@Test
 	void testAdd3() {

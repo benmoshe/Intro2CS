@@ -46,16 +46,16 @@ public class BinaryTree1<T> implements BinaryTree<T>{
 	public void add(T a) {
 		// null is NOT a valid data (will not be inserted to this binary tree
 		if(a!=null) {
-			_modeCount++;
+		//	_modeCount++;
 			if(this.isEmpty()) {_root = a;}
 			else {
 				double d = Math.random();
 				if(d<0.5) {
-					if(_left==null) {_left = new BinaryTree1(a);}
+					if(_left==null) {_left = new BinaryTree1<T>(a); _modeCount++;}
 					else {_left.add(a);}
 				}
 				else {
-					if(_right==null) {_right = new BinaryTree1(a);}
+					if(_right==null) {_right = new BinaryTree1<T>(a); _modeCount++;}
 					else {_right.add(a);}
 				}
 			}

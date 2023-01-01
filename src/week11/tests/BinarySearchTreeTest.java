@@ -19,7 +19,7 @@ class BinarySearchTreeTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		Comparator<String> c = Comparator.comparing(String::toString);
-		_bst1 = new BinarySearchTree<String>(c);
+		_bst1 = new BinarySearchTree<String>(new StringComp());
 		
 		// this is a "trick" of using anonymous class (out of scope for I2CS)
 		_bst2 = new BinarySearchTree<Double>(new Comparator<Double>(){
@@ -110,6 +110,41 @@ class BinarySearchTreeTest {
 		}
 		assertTrue(t>size*0.55);
 		assertTrue(t<size*0.75);
+	}
+	@Test
+	void testFind4() {
+		int s = BinaryTreeAlgo.size(_bst2);
+		assertEquals(s,0);
+		int size = 100;
+		for(int i=0;i<size;i++) {
+			double d = (int)(Math.random()*size);
+			_bst2.add(d);
+		}
+		s = BinaryTreeAlgo.size(_bst2);
+		assertEquals(s,size);
+		int t =0;
+		for(int i=0;i<size;i++) {
+			double dd = i;
+			Double d = _bst2.find(dd);
+			if(d!=null) {t=t+1;}
+		}
+		assertTrue(t>50);
+		assertTrue(t<80);
+	//	System.out.print(t);
+	}
+	//////////////////////////////////
+	private static class StringComp implements Comparator<String> {
+		@Override
+		public int compare(String o1, String o2) {
+			// TODO Auto-generated method stub
+			// o1<o2 --> -1
+			if(o1!=null || o2!= null ) {
+				if(o1==null) {return 1;}
+				if(o2==null) {return -1;}
+				return o1.compareTo(o2);
+			}
+			return 0;
+		}
 	}
 
 }

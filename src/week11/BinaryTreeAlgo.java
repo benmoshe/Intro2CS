@@ -16,7 +16,7 @@ public class BinaryTreeAlgo {
 	 * @param bt
 	 * @return
 	 */
-public static int size(BinaryTree bt) {
+public static <T> int size(BinaryTree<T> bt) {
 		int ans = 0;
 		if(bt !=null && !bt.isEmpty()) {
 			ans = 1 + size(bt.getLeft())+ size(bt.getRight());

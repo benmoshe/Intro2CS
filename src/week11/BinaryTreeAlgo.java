@@ -60,16 +60,16 @@ private static <T> void toArrayList(BinaryTree<T> bt, ArrayList<T> arr) {
 		arr.addAll(r);
 	}
 }
-public static <T> T max(BinaryTree<T> bt) {
+public static <T> T rightMost(BinaryTree<T> binaryTree) {
 	T ans = null;
-	BinaryTree<T> tmp = bt;
+	BinaryTree<T> tmp = binaryTree;
 	while(tmp!=null && !tmp.isEmpty()) {
 		ans = tmp.getRoot();
 		tmp = tmp.getRight();
 	}
 	return ans;
 }
-public static <T> T min(BinaryTree<T> bt) {
+public static <T> T leftMost(BinaryTree<T> bt) {
 	T ans = null;
 	BinaryTree<T> tmp = bt;
 	while(tmp!=null && !tmp.isEmpty()) {
@@ -84,11 +84,11 @@ public static <T>boolean isInOrder(BinaryTree<T> bt, Comparator<T> comp) {
 		ans &= isInOrder(bt.getLeft(), comp);
 		ans &= isInOrder(bt.getRight(), comp);
 		if( bt.getLeft()!=null) {
-			int cc = comp.compare( max(bt.getLeft()), bt.getRoot());
+			int cc = comp.compare( rightMost(bt.getLeft()), bt.getRoot());
 			if(cc>0) {ans = false;}
 		}
 		if( bt.getRight()!=null) {
-			int cc = comp.compare( bt.getRoot(), min(bt.getRight()));
+			int cc = comp.compare( bt.getRoot(), leftMost(bt.getRight()));
 			if(cc>=0) {ans = false;}
 		}
 	}

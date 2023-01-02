@@ -93,7 +93,7 @@ public class BinaryTree1<T> implements BinaryTree<T>{
 	}
 	@Override
 	public Iterator<T> iterator() {
-		//return new InOrderIeterator();
+	//	return new InOrderIeterator();
 		return iterator2();
 	}
 	//@Override

@@ -81,7 +81,6 @@ class BinarySearchTreeTest {
 			}
 		//	System.out.println(i+") "+arr.get(i));
 		}
-		
 	}
 	@Test
 	void testFind() {
@@ -146,5 +145,4 @@ class BinarySearchTreeTest {
 			return 0;
 		}
 	}
-
 }

@@ -40,13 +40,13 @@ public class BinaryTree1<T> implements BinaryTree<T>{
 	}
 	@Override
 	public boolean isLeaf() {
-		return _left==null && _right==null;
+		return !this.isEmpty() && _left==null && _right==null;
 	}
 	@Override
 	public void add(T a) {
 		// null is NOT a valid data (will not be inserted to this binary tree
 		if(a!=null) {
-		//	_modeCount++;
+			_modeCount++; // this is required as each recursive call uses a nother _modecount)
 			if(this.isEmpty()) {_root = a;}
 			else {
 				double d = Math.random();

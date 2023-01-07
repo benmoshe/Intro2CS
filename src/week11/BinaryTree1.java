@@ -126,4 +126,23 @@ public class BinaryTree1<T> implements BinaryTree<T>{
 			return _mc == getModeCount();
 		}	
 	}
+	@Override
+	/**
+	 * Removes the first element that equals to t.
+	 */
+	public T remove(T t) {
+		T ans = null;
+		ArrayList<T> tt = BinaryTreeAlgo.toArrayList(this);
+		Iterator<T> iter = tt.iterator();
+		while(iter.hasNext() && ans==null) {
+			T curr = iter.next();
+			if(curr.equals(t)) {iter.remove(); ans=curr;}
+		}
+		if(ans!=null) {
+			_root = null; _left=null; _right=null;
+			iter = tt.iterator();
+			while(iter.hasNext()) {this.add(iter.next());}
+		}
+		return ans;
+	}
 }

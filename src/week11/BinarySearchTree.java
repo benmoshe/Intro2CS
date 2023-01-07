@@ -1,4 +1,5 @@
 package week11;
+import java.util.ArrayList;
 /**
  * 
 LLL:1
@@ -20,6 +21,7 @@ R:9
          
  */
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class BinarySearchTree<T> extends BinaryTree1<T>{
 		
@@ -63,5 +65,13 @@ public class BinarySearchTree<T> extends BinaryTree1<T>{
 				}
 			}
 			return ans;
+		}
+		@Override
+		/**
+		 * Removes the first element that equals to t.
+		 */
+		public T remove(T t) {
+			///// try implementing this method - efficiently!
+			return null;
 		}
 	}

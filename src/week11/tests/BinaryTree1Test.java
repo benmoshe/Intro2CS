@@ -72,6 +72,27 @@ class BinaryTree1Test {
 		assertNotNull(r);
 	}
 	@Test
+	void testRemove() {
+		String r = _bt1.remove("4");
+		assertNull(r);
+		
+		_bt1.add("123");
+		r = _bt1.remove("4");
+		assertNull(r);
+		r = _bt1.remove("123");
+		assertEquals(r,"123");
+		assertEquals(_bt1.size(),0);
+		_bt1.add("1");
+		_bt1.add("2");_bt1.add("3");
+		_bt1.add("2");_bt1.add("3");
+		r = _bt1.remove("1");
+		assertEquals(r,"1");
+		assertEquals(_bt1.size(),4);
+		r = _bt1.remove("2");
+		assertEquals(r,"2");
+		assertEquals(_bt1.size(),3);
+	}
+	@Test
 	void testFind2() {
 		int size = 1000;
 		for(int i=0;i<size;i++) {

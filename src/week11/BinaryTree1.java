@@ -1,10 +1,15 @@
 package week11;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 
-public class BinaryTree1<T> implements BinaryTree<T>{
+public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	protected T _root;
 	protected BinaryTree<T> _left, _right;
 	protected int _modeCount;

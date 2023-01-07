@@ -20,6 +20,10 @@ public class TestingBT {
 		h = BinaryTreeAlgo.height(bst);
 		System.out.println("Height: "+h);
 		//	BinaryTreeAlgo.inOrderPrint(bst);	
+		String str = "saved_bst.obj";
+		BinaryTreeAlgo.save(bt, str);
+		BinaryTree<Integer> bt2 = (BinaryTree<Integer>)BinaryTreeAlgo.load(str);
+		System.out.println(bt.size()+" =?= "+bt2.size());
 	}
 }
 class StringComparator implements Comparator<String> {

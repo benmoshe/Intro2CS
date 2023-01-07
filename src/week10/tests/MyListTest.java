@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
 
 import week10.MyList;
-import week12.Circle2D;
-import week12.Ellipse2D;
-import week12.GeoShape;
-import week12.Point2D;
+import week7.Point2D;
+import week8.Circle2D;
+import week8.GeoShape;
+import week8.Rect2D;
 
 class MyListTest {
 
@@ -21,7 +21,7 @@ class MyListTest {
 		assertTrue(l.isEmpty());
 		System.out.println(l);
 	}
-	@Timeout(value = 500, unit = TimeUnit.MILLISECONDS)
+	@Timeout(value = 100, unit = TimeUnit.MILLISECONDS)
 	@Test
 	void testAdd() {
 		MyList<Point2D> l = new MyList<Point2D>();
@@ -86,15 +86,12 @@ class MyListTest {
 		GeoShape ans = null;
 		double f = Math.random(); // [0,1)
 		Point2D p1 = new Point2D(i,i*1.5);
-		if(f<0.3) {ans = p1;}
-		else {
 			if(i<0.6) {ans = new Circle2D(p1,2.1);}
 			else {
 				Point2D p2 = new Point2D(p1);
 				p2.move(p1);
-				ans = new Ellipse2D(p1,p2, p1.distance(p2)*1.3 );
+				ans = new Rect2D(p1,p2);
 			}
-		}
 		return ans;
 	}
 

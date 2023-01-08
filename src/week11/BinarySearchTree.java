@@ -68,12 +68,12 @@ public class BinarySearchTree<T> extends BinaryTree1<T> {
 		}
 		return ans;
 	}
-	@Override
+	//@Override
 	/**
 	 * Removes the first element that equals to t.
 	 */
-	public T remove(T t) {
+	//public T remove(T t) {
 		///// try implementing this method - efficiently!
-		return null;
-	}
+	//	return null;
+	//}
 }

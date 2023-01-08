@@ -1,6 +1,7 @@
 package week11;
 
 import java.util.Comparator;
+import java.util.Scanner;
 
 public class TestingBT {
 	public static void main(String[] args) {
@@ -24,6 +25,36 @@ public class TestingBT {
 		BinaryTreeAlgo.save(bt, str);
 		BinaryTree<Integer> bt2 = (BinaryTree<Integer>)BinaryTreeAlgo.load(str);
 		System.out.println(bt.size()+" =?= "+bt2.size());
+		demoGUI();
+		
+	}
+	/** Use StdDraw to draw a Binary Tree */
+	public static void demoGUI() {
+		Comparator<String> comp = new StringComparator();
+		BinarySearchTree<String> bst = new BinarySearchTree<String>(comp);
+		String[] nodes = {"5","2","0","4","9"}; 
+		for(int i=0;i<nodes.length;i++) {bst.add(nodes[i]);}
+		BinaryTreeAlgo.draw(bst);
+		Scanner sc = new Scanner(System.in);
+		String d="";
+		while(!d.equals("done")) {
+			System.out.println("input a String: (done to quit) ");
+			d = sc.next();
+			if(!d.equals("done")) {
+				bst.add(""+d);
+				BinaryTreeAlgo.draw(bst);
+			}
+			
+		}
+		d="";
+		while(!d.equals("done")) {
+			System.out.println("input a String to delete: (done to quit) ");
+			d = sc.next();
+			if(!d.equals("done")) {
+				bst.remove(""+d);
+				BinaryTreeAlgo.draw(bst);
+			}
+		}
 	}
 }
 class StringComparator implements Comparator<String> {

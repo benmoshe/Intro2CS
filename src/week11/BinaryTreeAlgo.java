@@ -1,5 +1,5 @@
 package week11;
-
+import week4.StdDraw;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -38,6 +38,44 @@ public class BinaryTreeAlgo {
 		}
 		return ans;
 	}
+	////////////////////////
+	/* 0. if(!isEmpty()) {
+		 *  1. 	q = newQ<T>(); // ArrayList<T>
+		 *  2.  q.add(_root);  // {1}
+		 *  3.  while(!q.isEmpty()) {
+		 *  4. 		BT curr = q.first(); // q.get(0); //{}, {3}, {4}
+		 *  5. 		if(curr.getLeft()!=null) {q.add(curr.getLeft());} // {2}, {3,4}, {4,5}
+		 *  6. 		if(curr.getRight()!=null) {q.add(curr.getRight());} // {2,3}, , {4,5,6}
+		 *  7. 	}
+	*/
+	public static <T> void byLevelPrint(BinaryTree<T> bt) {
+		if(bt!=null && !bt.isEmpty()) {
+			ArrayList<BinaryTree> q = new ArrayList<BinaryTree>();
+			q.add(bt);
+			while(!q.isEmpty()) {
+				BinaryTree<T> curr = q.remove(0);
+				System.out.println(curr.getRoot()+", ");
+				if(curr.getLeft()!=null) {q.add(curr.getLeft());}
+				if(curr.getRight()!=null) {q.add(curr.getRight());}
+			}
+		}
+	}
+	public static <T> ArrayList<T> byLevel(BinaryTree<T> bt) {
+		ArrayList<T> ans = new ArrayList<T>();
+		if(bt!=null && !bt.isEmpty()) {
+			ArrayList<BinaryTree<T>> q = new ArrayList<BinaryTree<T>>();
+			q.add(bt);
+			while(!q.isEmpty()) {
+				BinaryTree<T> curr = q.remove(0);
+				//System.out.println(curr.getRoot()+", ");
+				ans.add(curr.getRoot());
+				if(curr.getLeft()!=null) {q.add(curr.getLeft());}
+				if(curr.getRight()!=null) {q.add(curr.getRight());}
+			}
+		}
+		return ans;
+	}
+	///////////////////////
 	public static <T> int inOrderFullPrint(BinaryTree<T> bt) {
 		return inOrderFullPrint(bt, "");
 	}
@@ -128,5 +166,30 @@ public class BinaryTreeAlgo {
 		}
 		System.out.println("Successfully loaded the file "+name+" the Object "+ans);
 		return ans;
+	}
+	/////////////////////////////////////////////////
+	public static <T> void draw(BinaryTree<T> t) {
+		double scale = 10;
+		StdDraw.setScale(0, scale);
+		StdDraw.clear();
+		printGUI(t, scale/2, scale-1, scale/4);
+		StdDraw.show();
+	}
+	public static <T> void printGUI(BinaryTree<T> bt, double x, double y, double scale) {
+		if(bt!=null && !bt.isEmpty()) {
+			if(bt.getLeft()!=null) {
+				printGUI(bt.getLeft(), x-scale, y-1, scale/2);
+				StdDraw.line(x, y-0.4, x-scale, y-0.6);
+			}
+			//System.out.println(bt.getRoot());
+			StdDraw.text(x, y, bt.getRoot().toString());
+			StdDraw.circle(x, y, 0.4);
+			
+			//printGUI(bt.getRight(), x+scale, y-1, scale/2);
+			if(bt.getRight()!=null) {
+				printGUI(bt.getRight(), x+scale, y-1, scale/2);
+				StdDraw.line(x, y-0.4, x+scale, y-0.6);
+			}
+		}
 	}
 }

@@ -44,6 +44,15 @@ public interface BinaryTree<T> {
 	public T find(T t);
 	/** returns an in_order iterator */
 	public Iterator<T> iterator();
+	/**
+	 * 				1
+	 * 			2		3
+	 * 		4		  5    6
+	 * 				7     8
+	 *  		
+	 * @return
+	 */
+	public Iterator<T> iteratorByLevel();
 	public T remove(T element);
 	// public BinaryTree<T> copy();
 	

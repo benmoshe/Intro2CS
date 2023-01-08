@@ -137,7 +137,7 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 	 */
 	public T remove(T t) {
 		T ans = null;
-		ArrayList<T> tt = BinaryTreeAlgo.toArrayList(this);
+		ArrayList<T> tt = BinaryTreeAlgo.byLevel(this);
 		Iterator<T> iter = tt.iterator();
 		while(iter.hasNext() && ans==null) {
 			T curr = iter.next();
@@ -149,5 +149,28 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 			while(iter.hasNext()) {this.add(iter.next());}
 		}
 		return ans;
+	}
+	/**
+	 * 				1
+	 * 			2		3
+	 * 		4		  5    6
+	 * 				7     8
+	 *  0. if(!isEmpty()) {
+	 *  1. 	q = newQ<T>(); // ArrayList<T>
+	 *  2.  q.add(_root);  // {1}
+	 *  3.  while(!q.isEmpty()) {
+	 *  4. 		BT curr = q.first(); // q.get(0); //{}, {3}, {4}
+	 *  5. 		if(curr.getLeft()!=null) {q.add(curr.getLeft());} // {2}, {3,4}, {4,5}
+	 *  6. 		if(curr.getRight()!=null) {q.add(curr.getRight());} // {2,3}, , {4,5,6}
+	 *  7. 	}
+	 *  
+	 *  		
+	 *  
+	 *  
+	 * @return
+	 */
+	@Override
+	public Iterator<T> iteratorByLevel() {
+		return BinaryTreeAlgo.byLevel(this).iterator();
 	}
 }

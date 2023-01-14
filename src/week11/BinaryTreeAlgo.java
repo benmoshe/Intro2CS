@@ -60,6 +60,24 @@ public class BinaryTreeAlgo {
 			}
 		}
 	}
+	/**
+	 * 				1
+	 * 			2		3
+	 * 		4		  5    6
+	 * 				7     8
+	 * 
+	 * ArrayList<T> byLevel(BinaryTree<T> bt) {
+	 *  0. if(bt!=null && !bt.isEmpty()) {
+	 *  1. 	q = new ArrayList<BinaryTree<T>>();
+	 *  2.  ans = new ArrayList<T>();
+	 *  2.  q.add(bt);  // {1}
+	 *  3.  while(!q.isEmpty()) {
+	 *  4. 		curr = q.remove(0); // q.get(0); //{}, {3}, {4}
+	 *  5.		ans.add(curr.getRoot());	//1.2,3. 
+	 *  6. 		if(curr.getLeft()!=null) {q.add(curr.getLeft());} // {2}, {3,4},{4,5} 
+	 *  7. 		if(curr.getRight()!=null) {q.add(curr.getRight());} // {2,3}, {4,5,6}
+	 *  8. 	}
+	 */
 	public static <T> ArrayList<T> byLevel(BinaryTree<T> bt) {
 		ArrayList<T> ans = new ArrayList<T>();
 		if(bt!=null && !bt.isEmpty()) {
@@ -168,6 +186,7 @@ public class BinaryTreeAlgo {
 		return ans;
 	}
 	/////////////////////////////////////////////////
+
 	public static <T> void draw(BinaryTree<T> t) {
 		double scale = 10;
 		StdDraw.setScale(0, scale);

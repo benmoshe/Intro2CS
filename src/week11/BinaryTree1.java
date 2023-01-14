@@ -169,8 +169,6 @@ public class BinaryTree1<T> implements BinaryTree<T>, Serializable{
 	 *  7. 		if(curr.getRight()!=null) {q.add(curr.getRight());} // {2,3}, {4,5,6}
 	 *  8. 	}
 	 *  
-	 *  		
-	 *  
 	 *  
 	 * @return
 	 */

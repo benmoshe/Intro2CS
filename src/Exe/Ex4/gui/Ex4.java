@@ -10,7 +10,6 @@ import Exe.Ex4.ShapeCollectionable;
 import Exe.Ex4.geo.Circle2D;
 import Exe.Ex4.geo.GeoShapeable;
 import Exe.Ex4.geo.Point2D;
-import Exe.Ex4.geo.Polygon2D;
 
 /**
  * 
@@ -37,12 +36,11 @@ public class Ex4 implements Ex4_GUI{
 	public void init(ShapeCollectionable s) {
 		if(s==null) {_shapes = new ShapeCollection();}
 		else {_shapes = s.copy();}
-		GUI_Shapeable _gs = null;
-		Polygon2D _pp = null;
+		_gs = null;
 		_color = Color.blue;
 		_fill = false;
 		_mode = "";
-		Point2D _p1 = null;
+		 _p1 = null;
 	}
 	public void show(double d) {
 		StdDraw_Ex4.setScale(0,d);
@@ -183,7 +181,6 @@ public class Ex4 implements Ex4_GUI{
 				double r = _p1.distance(p);
 				gs = new Circle2D(_p1,r);
 			}
-	
 			_gs = new GUIShape(gs,false, Color.pink, 0);
 			drawShapes();
 		}

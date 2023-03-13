@@ -38,6 +38,23 @@ public class BinaryTreeAlgo {
 		}
 		return ans;
 	}
+	public static <T> int minLevelLeaf(BinaryTree<T> bt) {
+		int ans = -1;
+		if(bt!=null) {
+			if(bt.size()==1) {ans = 0;}
+			else {
+				if(bt.getLeft()==null && bt.getRight()!=null ){
+					return 1+minLevelLeaf(bt.getRight());}
+				if(bt.getRight()==null && bt.getLeft()!=null) {
+					return 1+minLevelLeaf(bt.getLeft());}
+				if(bt.getLeft()!=null&&  bt.getRight()!=null) {
+					return 1+ Math.min(minLevelLeaf(bt.getLeft()), minLevelLeaf(bt.getRight()));
+				}
+			}
+		}
+		
+		return ans;
+	}
 	////////////////////////
 	/* 0. if(!isEmpty()) {
 		 *  1. 	q = newQ<T>(); // ArrayList<T>

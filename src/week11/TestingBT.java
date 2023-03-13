@@ -27,6 +27,7 @@ public class TestingBT {
 		System.out.println(bt.size()+" =?= "+bt2.size());
 		demoGUI();
 		
+		
 	}
 	/** Use StdDraw to draw a Binary Tree */
 	public static void demoGUI() {
@@ -43,6 +44,7 @@ public class TestingBT {
 			if(!d.equals("done")) {
 				bst.add(""+d);
 				BinaryTreeAlgo.draw(bst);
+				System.out.println(BinaryTreeAlgo.minLevelLeaf(bst));
 			}
 			
 		}

@@ -2,7 +2,6 @@ package week6;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.jupiter.api.BeforeAll;
@@ -110,7 +109,7 @@ class SortTest {
 		boolean isSorted = MyArrayLibrary.isSortedAscending(arrM);
 		System.out.println("Recursive Merge sort time = "+dt_sec+" secs,  is sorted? "+ isSorted);
 		assertTrue(isSorted);
-		assertTrue(dt_sec<1);
+		assertTrue(dt_sec<1.0);
 	}
 	@Test
 	@Timeout(value = 1000, unit = TimeUnit.MILLISECONDS)

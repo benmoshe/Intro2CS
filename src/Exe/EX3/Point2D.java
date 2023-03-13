@@ -93,7 +93,7 @@ public class Point2D{
     {
         if(p==null || !(p instanceof Point2D)) {return false;}
         Point2D p2 = (Point2D)p;
-        return ( (_x==p2._x) && (_y==p2._y));
+        return ( (this.x()==p2._x) && (_y==p2._y));
     }
     public boolean close2equals(Point2D p2, double eps)
     {

@@ -15,13 +15,14 @@ import java.awt.Color;
  */
 public class Ex3 {
 	private static  Map2D _map = null;
-	private static Color _color = Color.blue;
+	private static Color _color = Color.yellow;
 	private static String _mode = "";
+	static Point2D _p0;
 	public static final int WHITE = Color.WHITE.getRGB();
 	public static final int BLACK = Color.BLACK.getRGB();
 
 	public static void main(String[] args) {
-		int dim = 10;  // init matrix (map) 10*10
+		int dim = 7;  // init matrix (map) 10*10
 		init(dim);
 	}
 	private static void init(int x) {
@@ -59,10 +60,13 @@ public class Ex3 {
 	public static void actionPerformed(String p) {
 		_mode = p;
 		if(p.equals("Blue")) {_color = Color.BLUE; }
+		if(p.equals("Green")) {_color = Color.GREEN; }
 		if(p.equals("White")) {_color = Color.WHITE; }
 		if(p.equals("Black")) {_color = Color.BLACK; }
 		
 		if(p.equals("20x20")) {init(20);}
+		if(p.equals("40x40")) {init(0);}
+		if(p.equals("80x80")) {init(80);}
 		if(p.equals("160x160")) {init(160);}
 
 		drawArray(_map);
@@ -73,6 +77,16 @@ public class Ex3 {
 		int col = _color.getRGB();
 		if(_mode.equals("Point")) {
 			_map.setPixel(p,col );
+			_mode = "none";
+		}
+		if(_mode.equals("Rect2")) {
+			_map.drawRect(p,_p0,col );
+			_mode = "none";
+		}
+		if(_mode.equals("Rect")) {
+			_p0 = new Point2D(p);
+			_mode = "Rect2";
+			
 		}
 		if(_mode.equals("Fill")) {
 			_map.fill(p, col);

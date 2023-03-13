@@ -32,13 +32,10 @@ public class Circle2D implements GeoShape{
 	 * 1,2,3 ==> Circle: _center: (1,2), radius: 3 
 	 */
 	public String toString() {
-		String ans = this.getClass().getName()+": " + center.toString()+","+this.getRad();
+		String ans = this.getClass().getSimpleName()+": " + center.toString()+","+this.getRad();
 		return ans;
 	}
-
-	public double peremiter() {
-		return 2*this.getRad() * Math.PI;
-	}
+	@Override
 	public boolean contains(Point2D p) {
 		return this.getRad() > p.distance(this.center);
 	}
@@ -77,8 +74,7 @@ public class Circle2D implements GeoShape{
 	}
 	@Override
 	public double perimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+			return 2*this.getRad() * Math.PI;
 	}
 	@Override
 	public GeoShape copy() {

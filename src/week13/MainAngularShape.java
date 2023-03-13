@@ -13,10 +13,10 @@ public class MainAngularShape {
 	}
 	public static void f1() {
 		// TODO Auto-generated method stub
-		Function2D f1 = new F1(0.6,1,3);
+		Function2D f1 = new F1(0.6,1,3); // f(x) =1+0.6*(cos(3x));
 		Point2D p0 = new Point2D(2,2);
 		AngularShape as = new AngularShape(f1, p0);
-		Point2D[] pp = as.getPoly(30);
+		Point2D[] pp = as.getPoly(130);
 		double[] xx = new double[pp.length];
 		double[] yy = new double[pp.length];
 		for(int i=0;i<pp.length;i++) {
@@ -36,7 +36,7 @@ public class MainAngularShape {
 		Point2D p0 = new Point2D(6,6);
 		AngularShape as = new AngularShape(f12, p0);
 		
-		Point2D[] pp = as.getPoly(100);
+		Point2D[] pp = as.getPoly(120);
 		double[] xx = new double[pp.length];
 		double[] yy = new double[pp.length];
 		for(int i=0;i<pp.length;i++) {

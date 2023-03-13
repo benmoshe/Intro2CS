@@ -4,13 +4,15 @@ public class ListOfStrings {
 	private LinkOfString _first;
 	
 	public ListOfStrings() {_first = null;}
+	private ListOfStrings(LinkOfString f) {
+		_first = f;
+	}
 	public ListOfStrings(ListOfStrings l) {
 		this();
 		for(int i=0;i<l.size();i=i+1) {
 			this.add(l.get(i));
 		}
 	}
-	
 	public void add(String a) {
 		LinkOfString f = new LinkOfString(a,_first);
 		_first = f;
@@ -33,18 +35,30 @@ public class ListOfStrings {
 			cr.setNext(cr.getNext().getNext());
 		}
 	}
-
+/**
+ * Note: O(n^2) complexity - inefficient!
+ * @param a
+ * @return
+ */
 	public boolean contains(String a) {
 		boolean ans = false;
 		for(int i=0;i<size() && !ans;i=i+1) {
 			if(this.get(i).equals(a)) {ans=true;}
 		}
 		return ans;
+	}/**
+	Simple example for tail recursion on linked list
+	*/
+	public boolean contains2(String a) {
+		if(this.isEmpty()) {return false;}
+		if(_first.getData().equals(a)) { return true;}
+		ListOfStrings f2 = new ListOfStrings(this._first.getNext());
+		return f2.contains2(a);
 	}
 
 	public String get(int i) {
 		String ans = null;
-		if(size()>i) {
+		if(i>=0 && size()>i) {
 			LinkOfString t = _first;
 			for(int a=0;a<i;a=a+1) {t=t.getNext();}
 			ans = t.getData();

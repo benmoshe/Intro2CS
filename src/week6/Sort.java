@@ -18,6 +18,12 @@ My slow Insertion sort time = 2.882 secs,  is sorted? true
 Recursive Merge sort time = 0.018 secs,  is sorted? true
 Java sort time = 0.025 secs,  is sorted? true
 
+Bubble sort time = 1.668 secs,  is sorted? true
+Selection sort time = 0.363 secs,  is sorted? true
+Insertion sort time = 0.603 secs,  is sorted? true
+My slow Insertion sort time = 2.891 secs,  is sorted? true
+Recursive Merge sort time = 0.019 secs,  is sorted? true
+Java sort time = 0.027 secs,  is sorted? true
  *
  */
 public class Sort {

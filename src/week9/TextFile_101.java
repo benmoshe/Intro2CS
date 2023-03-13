@@ -11,16 +11,31 @@ import java.util.Scanner;
 2) second line ...
 3)  3dr...
 4) end of file
+
+Exception in thread "main" java.io.FileNotFoundException: file_123.txt (No such file or directory)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:211)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:153)
+	at java.base/java.util.Scanner.<init>(Scanner.java:639)
+	at week9.TextFile_101.load(TextFile_101.java:44)
+	at week9.TextFile_101.main(TextFile_101.java:23)
+
+
  * @author boaz.benmoshe
  *
  */
 public class TextFile_101 {
-	public static void main(String[] a) throws FileNotFoundException {
+	public static void main(String[] a)  {
 		String str = "file_123.txt";
 		String data = "This is a multi String file,\n"
 				+ "second line ...\n 3dr... \n \n \n EOF";
 		save(str, data);
-		load(str);
+		try {
+			load(str);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("OK");
 		
 	}
